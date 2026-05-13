@@ -101,11 +101,11 @@ function Index() {
                 params={{ slug: post.slug }}
                 className="group block border-b border-rule py-10 hover:bg-card/60 -mx-6 px-6 transition-colors"
               >
-                <div className="grid md:grid-cols-12 gap-6 items-baseline">
+                <div className="grid md:grid-cols-12 gap-6 items-start">
                   <div className="md:col-span-1 font-display text-5xl md:text-6xl font-semibold text-gold leading-none">
                     {post.number}
                   </div>
-                  <div className="md:col-span-8">
+                  <div className="md:col-span-7">
                     <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-2">
                       {post.category}
                     </div>
@@ -115,13 +115,28 @@ function Index() {
                     <p className="mt-3 text-muted-foreground leading-relaxed max-w-2xl text-pretty">
                       {post.dek}
                     </p>
-                  </div>
-                  <div className="md:col-span-3 md:text-right font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
-                    <div>{post.date}</div>
-                    <div className="mt-1">{post.readTime}</div>
-                    <div className="mt-3 inline-flex items-center gap-1 text-foreground group-hover:text-gold transition-colors">
-                      Read <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                    <div className="mt-4 font-mono text-[11px] uppercase tracking-wider text-muted-foreground flex items-center gap-3">
+                      <span>{post.date}</span>
+                      <span>·</span>
+                      <span>{post.readTime}</span>
+                      <span className="inline-flex items-center gap-1 text-foreground group-hover:text-gold transition-colors ml-auto md:hidden">
+                        Read <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                      </span>
                     </div>
+                  </div>
+                  <div className="md:col-span-4">
+                    {post.hero && (
+                      <figure className="overflow-hidden rounded-md border border-rule bg-card aspect-[16/9]">
+                        <img
+                          src={post.hero}
+                          alt={post.title}
+                          loading="lazy"
+                          width={1600}
+                          height={896}
+                          className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                        />
+                      </figure>
+                    )}
                   </div>
                 </div>
                 {i === 0 && (
