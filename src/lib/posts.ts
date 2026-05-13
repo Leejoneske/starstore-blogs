@@ -9,6 +9,8 @@ export type Post = {
   hero?: string;
 };
 
+export const SITE_URL = "https://blog.starstore.app";
+
 export const posts: Post[] = [
   {
     slug: "starstore-now-on-starstore-app",
@@ -18,6 +20,7 @@ export const posts: Post[] = [
     category: "Announcements",
     date: "May 5, 2026",
     readTime: "4 min read",
+    hero: "/og/starstore-now-on-starstore-app.jpg",
   },
   {
     slug: "how-to-cash-out-telegram-stars",
@@ -27,6 +30,7 @@ export const posts: Post[] = [
     category: "Selling Stars",
     date: "December 10, 2024",
     readTime: "5 min read",
+    hero: "/og/how-to-cash-out-telegram-stars.jpg",
   },
   {
     slug: "starstore-knowledge-base",
@@ -36,6 +40,7 @@ export const posts: Post[] = [
     category: "Knowledge Base",
     date: "December 6, 2024",
     readTime: "6 min read",
+    hero: "/og/starstore-knowledge-base.jpg",
   },
   {
     slug: "telegram-stars-complete-guide",
@@ -45,6 +50,7 @@ export const posts: Post[] = [
     category: "Telegram Guides",
     date: "December 4, 2024",
     readTime: "4 min read",
+    hero: "/og/telegram-stars-complete-guide.jpg",
   },
 ];
 

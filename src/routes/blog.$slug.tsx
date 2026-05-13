@@ -1,6 +1,6 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { ArticleLayout } from "@/components/ArticleLayout";
-import { getPost } from "@/lib/posts";
+import { getPost, SITE_URL } from "@/lib/posts";
 import { articles } from "@/lib/articles";
 
 export const Route = createFileRoute("/blog/$slug")({
@@ -12,6 +12,8 @@ export const Route = createFileRoute("/blog/$slug")({
   head: ({ loaderData }) => {
     const post = loaderData?.post;
     if (!post) return {};
+    const ogImage = post.hero ? `${SITE_URL}${post.hero}` : undefined;
+    const url = `${SITE_URL}/blog/${post.slug}`;
     return {
       meta: [
         { title: `${post.title} — StarStore Insights` },
@@ -19,6 +21,19 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:title", content: post.title },
         { property: "og:description", content: post.dek },
         { property: "og:type", content: "article" },
+        { property: "og:url", content: url },
+        ...(ogImage
+          ? [
+              { property: "og:image", content: ogImage },
+              { property: "og:image:width", content: "1600" },
+              { property: "og:image:height", content: "896" },
+              { property: "og:image:alt", content: post.title },
+              { name: "twitter:card", content: "summary_large_image" },
+              { name: "twitter:title", content: post.title },
+              { name: "twitter:description", content: post.dek },
+              { name: "twitter:image", content: ogImage },
+            ]
+          : []),
       ],
     };
   },

@@ -43,6 +43,23 @@ export function ArticleLayout({ post, children }: { post: Post; children: React.
           </div>
         </div>
 
+        {/* Hero */}
+        {post.hero && (
+          <div className="border-b border-rule bg-card">
+            <div className="max-w-5xl mx-auto px-6 py-10">
+              <figure className="overflow-hidden rounded-lg border border-rule bg-paper">
+                <img
+                  src={post.hero}
+                  alt={post.title}
+                  width={1600}
+                  height={896}
+                  className="w-full h-auto block"
+                />
+              </figure>
+            </div>
+          </div>
+        )}
+
         {/* Body */}
         <article className="max-w-3xl mx-auto px-6 py-16 prose-editorial">
           {children}
