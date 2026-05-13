@@ -1,6 +1,6 @@
 import { FaTelegram, FaXTwitter, FaGithub, FaDiscord } from "react-icons/fa6";
 import { SiTon } from "react-icons/si";
-import { Star } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 export function SiteFooter() {
   return (
@@ -8,12 +8,12 @@ export function SiteFooter() {
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="grid md:grid-cols-3 gap-12">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <Star className="w-5 h-5 text-gold fill-gold" />
-              <span className="font-display text-xl font-semibold">StarStore Insights</span>
+            <div className="flex items-center gap-3 mb-4">
+              <img src={logo} alt="" className="w-9 h-9 rounded-full bg-paper" />
+              <span className="font-display text-xl font-semibold">Insights</span>
             </div>
             <p className="text-sm text-paper/60 leading-relaxed max-w-xs">
-              The editorial home of StarStore — guides, updates, and field notes on Telegram Stars,
+              The editorial home of the journal — guides, updates, and field notes on Telegram Stars,
               referrals, and crypto payouts.
             </p>
           </div>
@@ -59,7 +59,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-16 pt-6 border-t border-paper/10 flex flex-col md:flex-row justify-between gap-4 font-mono text-[11px] text-paper/40 uppercase tracking-wider">
-          <div>© 2026 StarStore · blog.starstore.app</div>
+          <div>© 2026 · blog.starstore.app</div>
           <div>Settled on TON · Built for Telegram</div>
         </div>
       </div>

@@ -5,6 +5,7 @@ import { posts } from "@/lib/posts";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { useState } from "react";
+import logo from "@/assets/logo.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -31,12 +32,16 @@ function Index() {
         <section className="border-b border-rule grain">
           <div className="max-w-6xl mx-auto px-6 pt-16 pb-20">
             <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.3em] text-muted-foreground">
-              <Star className="w-3 h-3 text-gold fill-gold twinkle" />
-              <span>Vol. 01 · Introducing StarStore Insights</span>
+              <img src={logo} alt="" className="w-5 h-5 rounded-full" />
+              <span>Vol. 01 · Introducing The Journal</span>
             </div>
 
             <h1 className="font-display font-semibold text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight mt-8 text-balance max-w-5xl">
-              Guides & updates from the <em className="text-gold not-italic font-display">StarStore</em> team.
+              Guides & updates from the
+              <span className="inline-flex items-baseline gap-3 ml-2">
+                <img src={logo} alt="brand mark" className="inline-block w-[0.9em] h-[0.9em] rounded-full translate-y-[0.1em]" />
+                <em className="text-gold not-italic font-display">team</em>
+              </span>.
             </h1>
 
             <p className="mt-8 max-w-2xl text-lg md:text-xl leading-relaxed text-muted-foreground text-pretty">
