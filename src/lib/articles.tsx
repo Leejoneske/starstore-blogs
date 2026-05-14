@@ -53,8 +53,9 @@ const Announcement = () => (
 const CashOut = () => (
   <>
     <p>
-      Telegram does not provide a direct way to convert Stars into cash. StarStore is the bridge: we buy your
-      Stars and pay you in USDT on the TON network, usually within hours of admin approval.
+      Telegram doesn't offer a simple, in-app way to turn your Stars into spendable money. StarStore fills
+      that gap: we buy your Stars directly and pay you in USDT on the TON network, usually within hours of
+      admin approval.
     </p>
 
     <h2>Step-by-step: selling your Stars</h2>
@@ -70,19 +71,21 @@ const CashOut = () => (
 
     <h2>Why the 21-day hold?</h2>
     <p>
-      The hold protects buyers, sellers, and the platform from chargebacks and recovered transactions on
-      Telegram's side. It mirrors the policy Telegram applies to its own Stars revenue, and lets us keep fees
-      low while paying out reliably.
+      The hold exists because of chargebacks. Stars are purchased through payment rails we don't control —
+      cards, wallets, and other third-party processors — and those payments can be reversed days or weeks
+      later by banks or providers. We can't fight a reversal once it's issued, so we wait out the window
+      Telegram itself uses for Stars revenue. It keeps payouts reliable and our fees low.
     </p>
 
     <h2>Common questions</h2>
     <h3>What rate do I get?</h3>
     <p>Live rates are shown in the Mini App before you confirm. They float with market USDT/Stars demand.</p>
 
-    <h3>Can I use TRC-20 USDT?</h3>
+    <h3>Can I use TRON / TRC-20 USDT?</h3>
     <p>
-      Withdrawals are sent on the TON network. Make sure your address is a TON USDT (jetton) address — sending
-      TRC-20 addresses will fail.
+      Yes — but you'll need to cover the network transaction cost yourself, which usually eats into a small
+      payout. We don't recommend it unless you specifically need TRC-20. The default and cheapest path is
+      USDT on TON, which is what we settle on by default.
     </p>
 
     <h3>What if I send the wrong wallet?</h3>
