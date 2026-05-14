@@ -1,0 +1,22 @@
+# StarStore Insights
+
+> The editorial blog of StarStore — guides and updates on Telegram Stars, USDT (TON) payouts, referrals, and the StarStore Telegram Mini App (@TgStarStore_bot).
+
+StarStore is a Telegram Mini App that lets users buy and sell Telegram Stars and Telegram Premium subscriptions, with USDT settlement on the TON network. This blog publishes practical guides, product updates, and a knowledge base for users.
+
+## Articles
+
+- [StarStore is Now Officially on starstore.app](https://blog.starstore.app/blog/starstore-now-on-starstore-app): Announcement — domain move from starstore.site to starstore.app and what changes for users.
+- [How to Cash Out Telegram Stars for Real Money](https://blog.starstore.app/blog/how-to-cash-out-telegram-stars): Step-by-step walkthrough for selling Telegram Stars and receiving USDT on the TON network.
+- [StarStore Knowledge Base: Buying, Selling, and Referrals](https://blog.starstore.app/blog/starstore-knowledge-base): Packages, limits, the 21-day hold, the referral program, and refund policy.
+- [Complete Guide to Telegram Stars](https://blog.starstore.app/blog/telegram-stars-complete-guide): What Telegram Stars are, how to buy them, how creators use them, and how to convert them to USDT.
+
+## Pages
+
+- [Home / Latest issue](https://blog.starstore.app/): Index of all articles.
+
+## Optional
+
+- [StarStore Mini App](https://t.me/TgStarStore_bot): Open the product in Telegram.
+- [starstore.app](https://starstore.app): Main product site.
+- [Sitemap](https://blog.starstore.app/sitemap.xml)
