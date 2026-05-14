@@ -21,15 +21,14 @@ const Announcement = () => (
       <li><strong>New URL:</strong> bookmark <a href="https://starstore.app">starstore.app</a>. Old <code>starstore.site</code> links will be redirected during the transition window.</li>
       <li><strong>Same Telegram bot:</strong> <code>@TgStarStore_bot</code> is unchanged. Open the Mini App from the bot exactly as before.</li>
       <li><strong>Same accounts & balances:</strong> your history, referrals, ambassador status, and pending payouts carry over. Nothing to re-register.</li>
-      <li><strong>Updated webhooks:</strong> if you integrate against our APIs, point your callbacks to the <code>starstore.app</code> host.</li>
     </ul>
 
     <h2>What we improved alongside the move</h2>
-    <ul>
-      <li><strong>Hardened security:</strong> stricter Telegram <code>initData</code> verification, per-route rate limits, Helmet headers, and a locked-down Telegram webhook with a secret token.</li>
-      <li><strong>Faster ambassador navigation:</strong> the referral tab now routes ambassadors directly to the ambassador dashboard with a prefetched cache — no more double clicks.</li>
-      <li><strong>Cleaner admin flows:</strong> CSRF handling fixed for confirm/decline actions and sell-order amounts now display correctly.</li>
-    </ul>
+    <p>
+      The move came with a quieter round of polish across the app: a smoother ambassador experience with
+      faster navigation into the dashboard, cleaner admin flows, and a handful of small UI fixes that make
+      the day-to-day feel snappier.
+    </p>
 
     <h2>What stays the same</h2>
     <p>
