@@ -33,26 +33,27 @@ export function SiteFooter() {
             <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-gold mb-4">
               Find us
             </div>
-            <div className="flex gap-3">
-              <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer" aria-label="Telegram"
-                 className="w-10 h-10 rounded-full border border-paper/20 flex items-center justify-center hover:bg-gold hover:text-ink hover:border-gold transition-all">
-                <FaTelegram className="w-4 h-4" />
+            <div className="flex flex-col gap-3 text-sm">
+              <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer"
+                 className="inline-flex items-center gap-3 hover:text-gold transition-colors">
+                <span className="w-9 h-9 rounded-full border border-paper/20 flex items-center justify-center">
+                  <FaTelegram className="w-4 h-4" />
+                </span>
+                @TgStarStore_bot
               </a>
-              <a href="https://x.com" target="_blank" rel="noreferrer" aria-label="X"
-                 className="w-10 h-10 rounded-full border border-paper/20 flex items-center justify-center hover:bg-gold hover:text-ink hover:border-gold transition-all">
-                <FaXTwitter className="w-4 h-4" />
+              <a href="mailto:support@starstore.app"
+                 className="inline-flex items-center gap-3 hover:text-gold transition-colors">
+                <span className="w-9 h-9 rounded-full border border-paper/20 flex items-center justify-center">
+                  <Mail className="w-4 h-4" />
+                </span>
+                support@starstore.app
               </a>
-              <a href="https://discord.com" target="_blank" rel="noreferrer" aria-label="Discord"
-                 className="w-10 h-10 rounded-full border border-paper/20 flex items-center justify-center hover:bg-gold hover:text-ink hover:border-gold transition-all">
-                <FaDiscord className="w-4 h-4" />
-              </a>
-              <a href="https://github.com" target="_blank" rel="noreferrer" aria-label="GitHub"
-                 className="w-10 h-10 rounded-full border border-paper/20 flex items-center justify-center hover:bg-gold hover:text-ink hover:border-gold transition-all">
-                <FaGithub className="w-4 h-4" />
-              </a>
-              <a href="https://ton.org" target="_blank" rel="noreferrer" aria-label="TON"
-                 className="w-10 h-10 rounded-full border border-paper/20 flex items-center justify-center hover:bg-gold hover:text-ink hover:border-gold transition-all">
-                <SiTon className="w-4 h-4" />
+              <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer"
+                 className="inline-flex items-center gap-3 hover:text-gold transition-colors">
+                <span className="w-9 h-9 rounded-full border border-paper/20 flex items-center justify-center">
+                  <MessageCircle className="w-4 h-4" />
+                </span>
+                Live chat in the app
               </a>
             </div>
           </div>
