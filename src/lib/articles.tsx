@@ -21,15 +21,14 @@ const Announcement = () => (
       <li><strong>New URL:</strong> bookmark <a href="https://starstore.app">starstore.app</a>. Old <code>starstore.site</code> links will be redirected during the transition window.</li>
       <li><strong>Same Telegram bot:</strong> <code>@TgStarStore_bot</code> is unchanged. Open the Mini App from the bot exactly as before.</li>
       <li><strong>Same accounts & balances:</strong> your history, referrals, ambassador status, and pending payouts carry over. Nothing to re-register.</li>
-      <li><strong>Updated webhooks:</strong> if you integrate against our APIs, point your callbacks to the <code>starstore.app</code> host.</li>
     </ul>
 
     <h2>What we improved alongside the move</h2>
-    <ul>
-      <li><strong>Hardened security:</strong> stricter Telegram <code>initData</code> verification, per-route rate limits, Helmet headers, and a locked-down Telegram webhook with a secret token.</li>
-      <li><strong>Faster ambassador navigation:</strong> the referral tab now routes ambassadors directly to the ambassador dashboard with a prefetched cache — no more double clicks.</li>
-      <li><strong>Cleaner admin flows:</strong> CSRF handling fixed for confirm/decline actions and sell-order amounts now display correctly.</li>
-    </ul>
+    <p>
+      The move came with a quieter round of polish across the app: a smoother ambassador experience with
+      faster navigation into the dashboard, cleaner admin flows, and a handful of small UI fixes that make
+      the day-to-day feel snappier.
+    </p>
 
     <h2>What stays the same</h2>
     <p>
@@ -54,8 +53,9 @@ const Announcement = () => (
 const CashOut = () => (
   <>
     <p>
-      Telegram does not provide a direct way to convert Stars into cash. StarStore is the bridge: we buy your
-      Stars and pay you in USDT on the TON network, usually within hours of admin approval.
+      Telegram doesn't offer a simple, in-app way to turn your Stars into spendable money. StarStore fills
+      that gap: we buy your Stars directly and pay you in USDT on the TON network, usually within hours of
+      admin approval.
     </p>
 
     <h2>Step-by-step: selling your Stars</h2>
@@ -71,19 +71,21 @@ const CashOut = () => (
 
     <h2>Why the 21-day hold?</h2>
     <p>
-      The hold protects buyers, sellers, and the platform from chargebacks and recovered transactions on
-      Telegram's side. It mirrors the policy Telegram applies to its own Stars revenue, and lets us keep fees
-      low while paying out reliably.
+      The hold exists because of chargebacks. Stars are purchased through payment rails we don't control —
+      cards, wallets, and other third-party processors — and those payments can be reversed days or weeks
+      later by banks or providers. We can't fight a reversal once it's issued, so we wait out the window
+      Telegram itself uses for Stars revenue. It keeps payouts reliable and our fees low.
     </p>
 
     <h2>Common questions</h2>
     <h3>What rate do I get?</h3>
     <p>Live rates are shown in the Mini App before you confirm. They float with market USDT/Stars demand.</p>
 
-    <h3>Can I use TRC-20 USDT?</h3>
+    <h3>Can I use TRON / TRC-20 USDT?</h3>
     <p>
-      Withdrawals are sent on the TON network. Make sure your address is a TON USDT (jetton) address — sending
-      TRC-20 addresses will fail.
+      Yes — but you'll need to cover the network transaction cost yourself, which usually eats into a small
+      payout. We don't recommend it unless you specifically need TRC-20. The default and cheapest path is
+      USDT on TON, which is what we settle on by default.
     </p>
 
     <h3>What if I send the wrong wallet?</h3>
@@ -100,23 +102,33 @@ const KnowledgeBase = () => (
   <>
     <h2>About StarStore</h2>
     <p>
-      StarStore is a Telegram Mini App launched on December 4, 2024 that lets users buy and sell Telegram Stars
-      and Premium subscriptions, with instant USDT settlement on supported flows. Access is via{" "}
-      <code>@TgStarStore_bot</code>.
+      StarStore is a Telegram Mini App launched on December 4, 2024 that lets users buy and sell Telegram
+      Stars and Telegram Premium subscriptions, with instant USDT settlement on supported flows. Access is
+      via <code>@TgStarStore_bot</code>.
     </p>
 
     <h2>Star packages</h2>
+    <p>
+      We sell Stars from a minimum of <strong>15</strong> all the way up to <strong>1,000,000</strong> per
+      order. A couple of things to know about the small end of the range:
+    </p>
     <ul>
-      <li>15 Stars — $0.30</li>
-      <li>25 Stars — $0.60</li>
-      <li>50 Stars — $1.00</li>
-      <li>100 Stars — $2.00</li>
-      <li>500 Stars — $10.00</li>
-      <li>1,000 Stars — $20.00</li>
+      <li>
+        Orders <strong>under 50 Stars</strong> are <em>account-based</em> — they can only be delivered to
+        your own Telegram account, not gifted to someone else.
+      </li>
+      <li>
+        Orders of <strong>50 Stars and above</strong> can be sent to any Telegram username — yes, you can
+        buy Stars for someone else as a gift.
+      </li>
+      <li>
+        Buying for your own account also works at the small tiers, so the cheapest entry point (15 Stars)
+        is fully available to you.
+      </li>
     </ul>
     <p>
-      Telegram Premium is available in 3, 6, and 12-month plans. See the{" "}
-      <a href="https://t.me/TgStarStore_bot">Mini App</a> for live pricing.
+      Pricing is dynamic and shown live in the <a href="https://t.me/TgStarStore_bot">Mini App</a> — same
+      goes for Telegram Premium (3, 6, and 12-month plans).
     </p>
 
     <h2>Selling Stars</h2>
@@ -139,9 +151,13 @@ const KnowledgeBase = () => (
     <p>Earn 0.5 USDT for every referred user who becomes <em>active</em>. A referral becomes active when they:</p>
     <ul>
       <li>Buy at least 100 Stars (cumulative across orders), <strong>or</strong></li>
-      <li>Sell at least 100 Stars (counted after the 21-day hold), <strong>or</strong></li>
-      <li>Buy any Telegram Premium plan (counted immediately).</li>
+      <li>Sell at least 100 Stars, <strong>or</strong></li>
+      <li>Buy any Telegram Premium plan.</li>
     </ul>
+    <p>
+      Referral bonuses are credited <strong>instantly</strong> the moment the target is reached — including
+      for sell orders. There's no waiting on the 21-day hold to see your bonus anymore.
+    </p>
     <p>
       Referrals must come through <code>@TgStarStore_bot</code> with your link — off-bot transactions are not
       tracked. Minimum withdrawal is 0.5 USDT to TON or TRC-20 USDT.
