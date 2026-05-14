@@ -102,23 +102,33 @@ const KnowledgeBase = () => (
   <>
     <h2>About StarStore</h2>
     <p>
-      StarStore is a Telegram Mini App launched on December 4, 2024 that lets users buy and sell Telegram Stars
-      and Premium subscriptions, with instant USDT settlement on supported flows. Access is via{" "}
-      <code>@TgStarStore_bot</code>.
+      StarStore is a Telegram Mini App launched on December 4, 2024 that lets users buy and sell Telegram
+      Stars and Telegram Premium subscriptions, with instant USDT settlement on supported flows. Access is
+      via <code>@TgStarStore_bot</code>.
     </p>
 
     <h2>Star packages</h2>
+    <p>
+      We sell Stars from a minimum of <strong>15</strong> all the way up to <strong>1,000,000</strong> per
+      order. A couple of things to know about the small end of the range:
+    </p>
     <ul>
-      <li>15 Stars — $0.30</li>
-      <li>25 Stars — $0.60</li>
-      <li>50 Stars — $1.00</li>
-      <li>100 Stars — $2.00</li>
-      <li>500 Stars — $10.00</li>
-      <li>1,000 Stars — $20.00</li>
+      <li>
+        Orders <strong>under 50 Stars</strong> are <em>account-based</em> — they can only be delivered to
+        your own Telegram account, not gifted to someone else.
+      </li>
+      <li>
+        Orders of <strong>50 Stars and above</strong> can be sent to any Telegram username — yes, you can
+        buy Stars for someone else as a gift.
+      </li>
+      <li>
+        Buying for your own account also works at the small tiers, so the cheapest entry point (15 Stars)
+        is fully available to you.
+      </li>
     </ul>
     <p>
-      Telegram Premium is available in 3, 6, and 12-month plans. See the{" "}
-      <a href="https://t.me/TgStarStore_bot">Mini App</a> for live pricing.
+      Pricing is dynamic and shown live in the <a href="https://t.me/TgStarStore_bot">Mini App</a> — same
+      goes for Telegram Premium (3, 6, and 12-month plans).
     </p>
 
     <h2>Selling Stars</h2>
@@ -141,9 +151,13 @@ const KnowledgeBase = () => (
     <p>Earn 0.5 USDT for every referred user who becomes <em>active</em>. A referral becomes active when they:</p>
     <ul>
       <li>Buy at least 100 Stars (cumulative across orders), <strong>or</strong></li>
-      <li>Sell at least 100 Stars (counted after the 21-day hold), <strong>or</strong></li>
-      <li>Buy any Telegram Premium plan (counted immediately).</li>
+      <li>Sell at least 100 Stars, <strong>or</strong></li>
+      <li>Buy any Telegram Premium plan.</li>
     </ul>
+    <p>
+      Referral bonuses are credited <strong>instantly</strong> the moment the target is reached — including
+      for sell orders. There's no waiting on the 21-day hold to see your bonus anymore.
+    </p>
     <p>
       Referrals must come through <code>@TgStarStore_bot</code> with your link — off-bot transactions are not
       tracked. Minimum withdrawal is 0.5 USDT to TON or TRC-20 USDT.
