@@ -23,13 +23,6 @@ const Announcement = () => (
       <li><strong>Same accounts & balances:</strong> your history, referrals, ambassador status, and pending payouts carry over. Nothing to re-register.</li>
     </ul>
 
-    <h2>What we improved alongside the move</h2>
-    <p>
-      The move came with a quieter round of polish across the app: a smoother ambassador experience with
-      faster navigation into the dashboard, cleaner admin flows, and a handful of small UI fixes that make
-      the day-to-day feel snappier.
-    </p>
-
     <h2>What stays the same</h2>
     <p>
       Our pricing, the 21-day holding window for Stars sales, the 0.5 USDT minimum referral payout, and the

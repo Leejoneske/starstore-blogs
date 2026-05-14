@@ -84,6 +84,29 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", type: "image/png", href: "/favicon.png" },
       { rel: "apple-touch-icon", href: "/favicon.png" },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "StarStore Insights",
+          alternateName: "blog.starstore.app",
+          url: "https://blog.starstore.app",
+          description:
+            "Editorial guides and updates on Telegram Stars, USDT payouts on TON, and the StarStore Mini App.",
+          publisher: {
+            "@type": "Organization",
+            name: "StarStore",
+            url: "https://starstore.app",
+            logo: {
+              "@type": "ImageObject",
+              url: "https://blog.starstore.app/favicon.png",
+            },
+          },
+        }),
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
