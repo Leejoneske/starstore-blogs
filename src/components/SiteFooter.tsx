@@ -1,5 +1,5 @@
-import { FaTelegram, FaXTwitter, FaGithub, FaDiscord } from "react-icons/fa6";
-import { SiTon } from "react-icons/si";
+import { FaTelegram } from "react-icons/fa6";
+import { Mail, MessageCircle } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 export function SiteFooter() {
