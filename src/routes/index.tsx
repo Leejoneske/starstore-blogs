@@ -60,13 +60,13 @@ function Index() {
               growing referrals, and staying secure — written by the people who build the platform.
             </p>
 
-            <div className="mt-10 flex flex-wrap items-center gap-3">
+            <div className="mt-10 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3">
               <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer"
-                 className="inline-flex items-center gap-2 bg-ink text-paper px-6 py-3 rounded-full font-medium hover:bg-gold hover:text-ink transition-colors">
+                 className="inline-flex items-center justify-center gap-2 bg-ink text-paper px-6 py-3 rounded-full font-medium hover:bg-gold hover:text-ink transition-colors w-full sm:w-auto text-center">
                 <FaTelegram className="w-4 h-4" /> Open the App
               </a>
               <Link to="/blog/$slug" params={{ slug: posts[0].slug }}
-                 className="inline-flex items-center gap-2 border border-ink px-6 py-3 rounded-full font-medium hover:bg-ink hover:text-paper transition-colors">
+                 className="inline-flex items-center justify-center gap-2 border border-ink px-6 py-3 rounded-full font-medium hover:bg-ink hover:text-paper transition-colors w-full sm:w-auto text-center">
                 Read articles <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -74,11 +74,11 @@ function Index() {
             {/* RSS */}
             <div className="mt-12 max-w-md">
               <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-2">Subscribe via RSS</div>
-              <div className="flex items-center gap-2 border border-rule rounded-md bg-card p-1.5">
-                <code className="flex-1 font-mono text-xs px-2 truncate">{rss}</code>
+              <div className="flex flex-col sm:flex-row items-stretch gap-2 border border-rule rounded-md bg-card p-1.5">
+                <code className="flex-1 font-mono text-xs px-2 py-2 sm:py-0 truncate self-center">{rss}</code>
                 <button
                   onClick={() => { navigator.clipboard.writeText(rss); setCopied(true); setTimeout(() => setCopied(false), 1500); }}
-                  className="px-3 py-1.5 bg-ink text-paper rounded text-xs font-mono uppercase tracking-wider hover:bg-gold hover:text-ink transition-colors flex items-center gap-1.5">
+                  className="px-3 py-2 sm:py-1.5 bg-ink text-paper rounded text-xs font-mono uppercase tracking-wider hover:bg-gold hover:text-ink transition-colors flex items-center justify-center gap-1.5">
                   <Copy className="w-3 h-3" /> {copied ? "Copied" : "Copy"}
                 </button>
               </div>
