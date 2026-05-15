@@ -93,12 +93,12 @@ function Index() {
             <div>
               <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-gold mb-2">In this issue</div>
               <h2 className="font-display text-4xl md:text-5xl font-semibold tracking-tight">
-                4 posts <span className="text-muted-foreground font-normal italic">·</span>
-                <span className="text-muted-foreground font-normal italic"> Updated May 5, 2026</span>
+                {posts.length} posts <span className="text-muted-foreground font-normal italic">·</span>
+                <span className="text-muted-foreground font-normal italic"> Updated {posts[0]?.date}</span>
               </h2>
             </div>
             <div className="flex flex-wrap gap-2 font-mono text-[10px] uppercase tracking-wider">
-              {["Announcements","Selling Stars","Knowledge base","Telegram guides"].map(t => (
+              {Array.from(new Set(posts.map((p) => p.category))).map((t) => (
                 <span key={t} className="px-3 py-1.5 bg-secondary rounded-full text-secondary-foreground">{t}</span>
               ))}
             </div>
