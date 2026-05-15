@@ -164,22 +164,21 @@ function Index() {
 
         {/* Stay in the loop */}
         <section className="max-w-6xl mx-auto px-6 pb-20">
-          <div className="border border-rule rounded-lg p-10 md:p-16 bg-card text-center">
+          <div className="border border-rule rounded-lg p-8 sm:p-10 md:p-16 bg-card text-center">
             <Star className="w-8 h-8 text-gold fill-gold mx-auto twinkle" />
             <h2 className="font-display text-3xl md:text-5xl font-semibold mt-6 tracking-tight text-balance">
               Stay in the loop.
             </h2>
             <p className="mt-4 text-muted-foreground max-w-md mx-auto">
-              New issues land in the StarStore Mini App and your favorite feed reader.
+              Get new posts in your inbox — no spam, unsubscribe anytime.
             </p>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <div className="mt-8">
+              <SubscribeForm source="homepage" />
+            </div>
+            <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 max-w-md mx-auto">
               <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer"
-                 className="inline-flex items-center gap-2 bg-ink text-paper px-6 py-3 rounded-full font-medium hover:bg-gold hover:text-ink transition-colors">
+                 className="inline-flex items-center justify-center gap-2 bg-ink text-paper px-6 py-3 rounded-full font-medium hover:bg-gold hover:text-ink transition-colors w-full sm:w-auto">
                 <FaTelegram className="w-4 h-4" /> Join us on Telegram
-              </a>
-              <a href="https://starstore.app/blog/atom.xml"
-                 className="inline-flex items-center gap-2 border border-ink px-6 py-3 rounded-full font-medium hover:bg-ink hover:text-paper transition-colors">
-                Atom feed
               </a>
             </div>
           </div>
