@@ -141,7 +141,9 @@ function Index() {
                         <img
                           src={post.hero}
                           alt={post.title}
-                          loading="lazy"
+                          loading={i === 0 ? "eager" : "lazy"}
+                          fetchpriority={i === 0 ? "high" : "auto"}
+                          decoding="async"
                           width={1600}
                           height={896}
                           className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
