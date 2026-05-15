@@ -142,7 +142,7 @@ function Index() {
                           src={post.hero}
                           alt={post.title}
                           loading={i === 0 ? "eager" : "lazy"}
-                          fetchpriority={i === 0 ? "high" : "auto"}
+                          fetchPriority={i === 0 ? "high" : "auto"}
                           decoding="async"
                           width={1600}
                           height={896}
