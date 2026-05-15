@@ -99,7 +99,12 @@ export const Route = createFileRoute("/blog/$slug")({
             ]
           : []),
       ],
-      links: [{ rel: "canonical", href: url }],
+      links: [
+        { rel: "canonical", href: url },
+        ...(post.hero
+          ? [{ rel: "preload", as: "image", href: post.hero, fetchpriority: "high" } as const]
+          : []),
+      ],
       scripts: [
         { type: "application/ld+json", children: JSON.stringify(articleSchema) },
         { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
