@@ -4,6 +4,7 @@ import { FaTelegram } from "react-icons/fa6";
 import { posts } from "@/lib/posts";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { SubscribeForm } from "@/components/SubscribeForm";
 import { useState } from "react";
 import logo from "@/assets/logo.png";
 
@@ -14,6 +15,16 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Practical know-how for buying and selling Telegram Stars, growing referrals, and staying secure — from the team behind StarStore." },
       { property: "og:title", content: "StarStore Insights" },
       { property: "og:description", content: "Editorial guides on Telegram Stars, USDT payouts, and the StarStore Mini App." },
+    ],
+    links: [
+      // Preload the first (LCP) hero image so it's ready before paint.
+      ...(posts[0]?.hero
+        ? [{ rel: "preload", as: "image", href: posts[0].hero, fetchpriority: "high" } as const]
+        : []),
+      // Warm up subsequent hero images while the page is idle.
+      ...posts.slice(1).flatMap((p) =>
+        p.hero ? [{ rel: "prefetch", as: "image", href: p.hero } as const] : [],
+      ),
     ],
   }),
   component: Index,
@@ -49,13 +60,13 @@ function Index() {
               growing referrals, and staying secure — written by the people who build the platform.
             </p>
 
-            <div className="mt-10 flex flex-wrap items-center gap-3">
+            <div className="mt-10 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3">
               <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer"
-                 className="inline-flex items-center gap-2 bg-ink text-paper px-6 py-3 rounded-full font-medium hover:bg-gold hover:text-ink transition-colors">
+                 className="inline-flex items-center justify-center gap-2 bg-ink text-paper px-6 py-3 rounded-full font-medium hover:bg-gold hover:text-ink transition-colors w-full sm:w-auto text-center">
                 <FaTelegram className="w-4 h-4" /> Open the App
               </a>
               <Link to="/blog/$slug" params={{ slug: posts[0].slug }}
-                 className="inline-flex items-center gap-2 border border-ink px-6 py-3 rounded-full font-medium hover:bg-ink hover:text-paper transition-colors">
+                 className="inline-flex items-center justify-center gap-2 border border-ink px-6 py-3 rounded-full font-medium hover:bg-ink hover:text-paper transition-colors w-full sm:w-auto text-center">
                 Read articles <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -63,11 +74,11 @@ function Index() {
             {/* RSS */}
             <div className="mt-12 max-w-md">
               <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-2">Subscribe via RSS</div>
-              <div className="flex items-center gap-2 border border-rule rounded-md bg-card p-1.5">
-                <code className="flex-1 font-mono text-xs px-2 truncate">{rss}</code>
+              <div className="flex flex-col sm:flex-row items-stretch gap-2 border border-rule rounded-md bg-card p-1.5">
+                <code className="flex-1 font-mono text-xs px-2 py-2 sm:py-0 truncate self-center">{rss}</code>
                 <button
                   onClick={() => { navigator.clipboard.writeText(rss); setCopied(true); setTimeout(() => setCopied(false), 1500); }}
-                  className="px-3 py-1.5 bg-ink text-paper rounded text-xs font-mono uppercase tracking-wider hover:bg-gold hover:text-ink transition-colors flex items-center gap-1.5">
+                  className="px-3 py-2 sm:py-1.5 bg-ink text-paper rounded text-xs font-mono uppercase tracking-wider hover:bg-gold hover:text-ink transition-colors flex items-center justify-center gap-1.5">
                   <Copy className="w-3 h-3" /> {copied ? "Copied" : "Copy"}
                 </button>
               </div>
@@ -82,12 +93,12 @@ function Index() {
             <div>
               <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-gold mb-2">In this issue</div>
               <h2 className="font-display text-4xl md:text-5xl font-semibold tracking-tight">
-                4 posts <span className="text-muted-foreground font-normal italic">·</span>
-                <span className="text-muted-foreground font-normal italic"> Updated May 5, 2026</span>
+                {posts.length} posts <span className="text-muted-foreground font-normal italic">·</span>
+                <span className="text-muted-foreground font-normal italic"> Updated {posts[0]?.date}</span>
               </h2>
             </div>
             <div className="flex flex-wrap gap-2 font-mono text-[10px] uppercase tracking-wider">
-              {["Announcements","Selling Stars","Knowledge base","Telegram guides"].map(t => (
+              {Array.from(new Set(posts.map((p) => p.category))).map((t) => (
                 <span key={t} className="px-3 py-1.5 bg-secondary rounded-full text-secondary-foreground">{t}</span>
               ))}
             </div>
@@ -130,7 +141,9 @@ function Index() {
                         <img
                           src={post.hero}
                           alt={post.title}
-                          loading="lazy"
+                          loading={i === 0 ? "eager" : "lazy"}
+                          fetchPriority={i === 0 ? "high" : "auto"}
+                          decoding="async"
                           width={1600}
                           height={896}
                           className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
@@ -151,22 +164,21 @@ function Index() {
 
         {/* Stay in the loop */}
         <section className="max-w-6xl mx-auto px-6 pb-20">
-          <div className="border border-rule rounded-lg p-10 md:p-16 bg-card text-center">
+          <div className="border border-rule rounded-lg p-8 sm:p-10 md:p-16 bg-card text-center">
             <Star className="w-8 h-8 text-gold fill-gold mx-auto twinkle" />
             <h2 className="font-display text-3xl md:text-5xl font-semibold mt-6 tracking-tight text-balance">
               Stay in the loop.
             </h2>
             <p className="mt-4 text-muted-foreground max-w-md mx-auto">
-              New issues land in the StarStore Mini App and your favorite feed reader.
+              Get new posts in your inbox — no spam, unsubscribe anytime.
             </p>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <div className="mt-8">
+              <SubscribeForm source="homepage" />
+            </div>
+            <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 max-w-md mx-auto">
               <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer"
-                 className="inline-flex items-center gap-2 bg-ink text-paper px-6 py-3 rounded-full font-medium hover:bg-gold hover:text-ink transition-colors">
+                 className="inline-flex items-center justify-center gap-2 bg-ink text-paper px-6 py-3 rounded-full font-medium hover:bg-gold hover:text-ink transition-colors w-full sm:w-auto">
                 <FaTelegram className="w-4 h-4" /> Join us on Telegram
-              </a>
-              <a href="https://starstore.app/blog/atom.xml"
-                 className="inline-flex items-center gap-2 border border-ink px-6 py-3 rounded-full font-medium hover:bg-ink hover:text-paper transition-colors">
-                Atom feed
               </a>
             </div>
           </div>

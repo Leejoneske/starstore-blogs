@@ -53,6 +53,9 @@ export function ArticleLayout({ post, children }: { post: Post; children: React.
                   alt={post.title}
                   width={1600}
                   height={896}
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
                   className="w-full h-auto block"
                 />
               </figure>
