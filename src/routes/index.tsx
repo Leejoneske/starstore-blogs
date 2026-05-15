@@ -4,6 +4,7 @@ import { FaTelegram } from "react-icons/fa6";
 import { posts } from "@/lib/posts";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { SubscribeForm } from "@/components/SubscribeForm";
 import { useState } from "react";
 import logo from "@/assets/logo.png";
 
@@ -14,6 +15,16 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Practical know-how for buying and selling Telegram Stars, growing referrals, and staying secure — from the team behind StarStore." },
       { property: "og:title", content: "StarStore Insights" },
       { property: "og:description", content: "Editorial guides on Telegram Stars, USDT payouts, and the StarStore Mini App." },
+    ],
+    links: [
+      // Preload the first (LCP) hero image so it's ready before paint.
+      ...(posts[0]?.hero
+        ? [{ rel: "preload", as: "image", href: posts[0].hero, fetchpriority: "high" } as const]
+        : []),
+      // Warm up subsequent hero images while the page is idle.
+      ...posts.slice(1).flatMap((p) =>
+        p.hero ? [{ rel: "prefetch", as: "image", href: p.hero } as const] : [],
+      ),
     ],
   }),
   component: Index,
