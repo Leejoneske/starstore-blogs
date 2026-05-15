@@ -6,9 +6,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   plugins: [
-    tanstackStart({
-      server: { preset: "vercel" },
-    }),
+    tanstackStart(),
     TanStackRouterVite({ autoCodeSplitting: true }),
     tailwindcss(),
     tsconfigPaths(),
