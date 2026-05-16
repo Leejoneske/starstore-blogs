@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import type {} from "@tanstack/react-start";
+import "@tanstack/react-start";
 import { posts } from "@/lib/posts";
 
 const BASE_URL = "https://blog.starstore.app";
@@ -22,4 +22,4 @@ export const Route = createFileRoute("/sitemap.xml")({
       },
     },
   },
-});
+} as any);

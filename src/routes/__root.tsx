@@ -74,10 +74,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Insights — blog.starstore.app" },
       { name: "description", content: "Editorial guides and updates on Telegram Stars, USDT payouts, and referrals." },
+      {
+        name: "keywords",
+        content:
+          "StarStore, StarStore app, StarStore blog, StarStore news, StarStore Ambassadors, Telegram Stars, buy Telegram Stars, sell Telegram Stars, Telegram Stars to USDT, Telegram Stars to TON, stars to TON, stars to USDT, convert Telegram Stars, convert stars to USDT, convert stars to TON, how to cash out Telegram Stars, cash out Telegram Stars, withdraw Telegram Stars, how to withdraw Telegram Stars, Telegram Stars withdrawal, Telegram Stars exchange, Telegram Stars marketplace, Telegram Premium, buy Telegram Premium, Telegram Mini App, TON USDT, USDT TON network, TgStarStore_bot, starstore.app, Telegram Stars guide, Telegram Stars referral, Telegram Stars rates",
+      },
       { property: "og:title", content: "Insights — The Journal" },
       { property: "og:description", content: "Editorial guides on Telegram Stars and the Mini App." },
+      { property: "og:site_name", content: "StarStore Insights" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:site", content: "@TgStarStore" },
+      { name: "author", content: "StarStore" },
+      { name: "application-name", content: "StarStore Insights" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
