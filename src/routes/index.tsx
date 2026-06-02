@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Star, ArrowRight, Copy } from "lucide-react";
+import { ArrowRight, Copy } from "lucide-react";
 import { FaTelegram } from "react-icons/fa6";
 import { posts } from "@/lib/posts";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -7,6 +7,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SubscribeForm } from "@/components/SubscribeForm";
 import { useState } from "react";
 import logo from "@/assets/logo.png";
+import telegramStarSticker from "@/assets/telegram-star-sticker.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -165,7 +166,14 @@ function Index() {
         {/* Stay in the loop */}
         <section className="max-w-6xl mx-auto px-6 pb-20">
           <div className="border border-rule rounded-lg p-8 sm:p-10 md:p-16 bg-card text-center">
-            <Star className="w-8 h-8 text-gold fill-gold mx-auto twinkle" />
+            <img
+              src={telegramStarSticker}
+              alt="StarStore star sticker"
+              loading="lazy"
+              width={96}
+              height={96}
+              className="w-20 h-20 mx-auto sticker-float drop-shadow-md"
+            />
             <h2 className="font-display text-3xl md:text-5xl font-semibold mt-6 tracking-tight text-balance">
               Stay in the loop.
             </h2>
