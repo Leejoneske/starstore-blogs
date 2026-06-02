@@ -7,7 +7,6 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SubscribeForm } from "@/components/SubscribeForm";
 import { useState } from "react";
 import logo from "@/assets/logo.png";
-import telegramStarSticker from "@/assets/telegram-star-sticker.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -167,12 +166,12 @@ function Index() {
         <section className="max-w-6xl mx-auto px-6 pb-20">
           <div className="border border-rule rounded-lg p-8 sm:p-10 md:p-16 bg-card text-center">
             <img
-              src={telegramStarSticker}
-              alt="StarStore star sticker"
+              src={logo}
+              alt="StarStore app icon"
               loading="lazy"
               width={96}
               height={96}
-              className="w-20 h-20 mx-auto sticker-float drop-shadow-md"
+              className="w-20 h-20 mx-auto rounded-2xl drop-shadow-md"
             />
             <h2 className="font-display text-3xl md:text-5xl font-semibold mt-6 tracking-tight text-balance">
               Stay in the loop.
