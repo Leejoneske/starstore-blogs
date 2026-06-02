@@ -1,6 +1,8 @@
 // Resend email sender (server-only)
 
-const FROM = "StarStore <noreply@starstore.app>";
+// Sender kept separate from the `noreply@` mailbox (which is tied to a
+// different Resend API key). This newsletter stream uses `news@`.
+const FROM = "StarStore Insights <news@starstore.app>";
 const SITE = "https://blog.starstore.app";
 
 export interface SendEmailParams {

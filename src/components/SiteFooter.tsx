@@ -24,8 +24,8 @@ export function SiteFooter() {
             </div>
             <ul className="space-y-2 text-sm">
               <li><a href="/" className="hover:text-gold">Latest Issue</a></li>
-              <li><a href="https://starstore.app/blog/rss.xml" className="hover:text-gold">RSS Feed</a></li>
-              <li><a href="https://starstore.app/blog/atom.xml" className="hover:text-gold">Atom Feed</a></li>
+              <li><a href="https://blog.starstore.app/rss.xml" className="hover:text-gold">RSS Feed</a></li>
+              <li><a href="https://blog.starstore.app/atom.xml" className="hover:text-gold">Atom Feed</a></li>
             </ul>
           </div>
 
