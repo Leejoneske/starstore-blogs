@@ -89,7 +89,8 @@ export function ArticleLayout({ post, children }: { post: Post; children: React.
         {/* CTA */}
         <div className="max-w-3xl mx-auto px-6 pb-16">
           <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer"
-             className="block bg-ink text-paper p-8 rounded-lg group hover:bg-gold hover:text-ink transition-colors">
+             className="btn-press block bg-ink text-paper p-8 rounded-lg group hover:bg-gold hover:text-ink">
+
             <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-gold group-hover:text-ink/60 mb-2">Try it</div>
             <div className="flex items-end justify-between gap-4">
               <div className="font-display text-2xl md:text-3xl font-semibold leading-tight">
