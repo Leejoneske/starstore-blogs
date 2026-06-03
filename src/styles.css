@@ -99,6 +99,19 @@
     background: var(--gold);
     color: var(--ink);
   }
+
+  /* Tactile press feedback on every native button */
+  button {
+    transition:
+      color 0.2s ease,
+      background-color 0.2s ease,
+      border-color 0.2s ease,
+      transform 0.12s ease,
+      box-shadow 0.2s ease;
+  }
+  button:not(:disabled):active {
+    transform: scale(0.96);
+  }
 }
 
 @layer utilities {
@@ -112,6 +125,18 @@
   }
   .double-rule {
     border-top: 3px double var(--rule);
+  }
+
+  /* Press feedback for button-styled links / CTAs (a, Link) */
+  .btn-press {
+    transition:
+      color 0.2s ease,
+      background-color 0.2s ease,
+      border-color 0.2s ease,
+      transform 0.14s ease;
+  }
+  .btn-press:active {
+    transform: scale(0.96);
   }
 
   .prose-editorial p {

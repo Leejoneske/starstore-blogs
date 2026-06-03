@@ -62,11 +62,11 @@ function Index() {
 
             <div className="mt-10 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3">
               <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer"
-                 className="inline-flex items-center justify-center gap-2 bg-ink text-paper px-6 py-3 rounded-full font-medium hover:bg-gold hover:text-ink transition-colors w-full sm:w-auto text-center">
+                 className="btn-press inline-flex items-center justify-center gap-2 bg-ink text-paper px-6 py-3 rounded-full font-medium hover:bg-gold hover:text-ink w-full sm:w-auto text-center">
                 <FaTelegram className="w-4 h-4" /> Open the App
               </a>
               <Link to="/blog/$slug" params={{ slug: posts[0].slug }}
-                 className="inline-flex items-center justify-center gap-2 border border-ink px-6 py-3 rounded-full font-medium hover:bg-ink hover:text-paper transition-colors w-full sm:w-auto text-center">
+                 className="btn-press inline-flex items-center justify-center gap-2 border border-ink px-6 py-3 rounded-full font-medium hover:bg-ink hover:text-paper w-full sm:w-auto text-center">
                 Read articles <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -184,7 +184,7 @@ function Index() {
             </div>
             <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 max-w-md mx-auto">
               <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer"
-                 className="inline-flex items-center justify-center gap-2 bg-ink text-paper px-6 py-3 rounded-full font-medium hover:bg-gold hover:text-ink transition-colors w-full sm:w-auto">
+                 className="btn-press inline-flex items-center justify-center gap-2 bg-ink text-paper px-6 py-3 rounded-full font-medium hover:bg-gold hover:text-ink w-full sm:w-auto">
                 <FaTelegram className="w-4 h-4" /> Join us on Telegram
               </a>
             </div>
