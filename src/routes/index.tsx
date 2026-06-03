@@ -184,7 +184,7 @@ function Index() {
             </div>
             <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 max-w-md mx-auto">
               <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer"
-                 className="inline-flex items-center justify-center gap-2 bg-ink text-paper px-6 py-3 rounded-full font-medium hover:bg-gold hover:text-ink transition-colors w-full sm:w-auto">
+                 className="btn-press inline-flex items-center justify-center gap-2 bg-ink text-paper px-6 py-3 rounded-full font-medium hover:bg-gold hover:text-ink w-full sm:w-auto">
                 <FaTelegram className="w-4 h-4" /> Join us on Telegram
               </a>
             </div>
