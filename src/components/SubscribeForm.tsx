@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { Mail, Loader2, Check } from "lucide-react";
 import { subscribeToNewsletter } from "@/lib/subscribe.functions";
+
+// Minimum gap between accepted submits — blocks rapid repeat clicks
+// that could otherwise trigger duplicate upserts / welcome emails.
+const SUBMIT_COOLDOWN_MS = 4000;
 
 export function SubscribeForm({ source = "blog" }: { source?: string }) {
   const subscribe = useServerFn(subscribeToNewsletter);
@@ -9,9 +13,18 @@ export function SubscribeForm({ source = "blog" }: { source?: string }) {
   const [state, setState] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
 
+  // Synchronous guards: refs update immediately, so multiple clicks fired
+  // within the same tick (before React re-renders) can't slip through.
+  const inFlight = useRef(false);
+  const lastSubmit = useRef(0);
+
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (state === "loading") return;
+    // Throttle: ignore if a request is in flight or within the cooldown window.
+    const now = Date.now();
+    if (inFlight.current || now - lastSubmit.current < SUBMIT_COOLDOWN_MS) return;
+    inFlight.current = true;
+    lastSubmit.current = now;
     setState("loading");
     try {
       const res = await subscribe({ data: { email, source } });
@@ -30,8 +43,11 @@ export function SubscribeForm({ source = "blog" }: { source?: string }) {
           ? "Enter a valid email address"
           : "Something went wrong. Try again.",
       );
+    } finally {
+      inFlight.current = false;
     }
   }
+
 
   return (
     <form onSubmit={onSubmit} className="w-full max-w-md mx-auto">
