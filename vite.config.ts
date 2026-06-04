@@ -8,7 +8,7 @@ export default defineConfig({
     // tanstackStart already runs router generation + auto code-splitting.
     // Do NOT also add TanStackRouterVite — it double-transforms route files
     // and produces a "Duplicate declaration hot" compile error.
-    tanstackStart({ tsr: { autoCodeSplitting: true } }),
+    tanstackStart({ router: { autoCodeSplitting: true } }),
     tailwindcss(),
     tsconfigPaths(),
   ],
