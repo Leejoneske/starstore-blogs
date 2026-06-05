@@ -11,8 +11,15 @@ export const Route = createFileRoute("/unsubscribe")({
   }),
   head: () => ({
     meta: [
-      { title: "Unsubscribe — StarStore" },
+      { title: "Unsubscribe — StarStore Insights" },
+      { name: "description", content: "Manage your StarStore Insights email subscription and stop receiving newsletter updates." },
       { name: "robots", content: "noindex, nofollow" },
+      { property: "og:title", content: "Unsubscribe — StarStore Insights" },
+      { property: "og:description", content: "Manage your StarStore Insights email subscription and stop receiving newsletter updates." },
+      { property: "og:url", content: "https://blog.starstore.app/unsubscribe" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://blog.starstore.app/unsubscribe" },
     ],
   }),
   component: UnsubscribePage,

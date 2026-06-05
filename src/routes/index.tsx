@@ -11,12 +11,14 @@ import logo from "@/assets/logo.png";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "StarStore Insights — Guides & updates from the StarStore team" },
+      { title: "StarStore Insights — Telegram Stars Guides & Updates" },
       { name: "description", content: "Practical know-how for buying and selling Telegram Stars, growing referrals, and staying secure — from the team behind StarStore." },
       { property: "og:title", content: "StarStore Insights" },
       { property: "og:description", content: "Editorial guides on Telegram Stars, USDT payouts, and the StarStore Mini App." },
+      { property: "og:url", content: "https://blog.starstore.app/" },
     ],
     links: [
+      { rel: "canonical", href: "https://blog.starstore.app/" },
       // Preload the first (LCP) hero image so it's ready before paint.
       ...(posts[0]?.hero
         ? [{ rel: "preload", as: "image", href: posts[0].hero, fetchpriority: "high" } as const]
