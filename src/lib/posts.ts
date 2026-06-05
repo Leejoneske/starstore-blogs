@@ -47,6 +47,7 @@ export const posts: Post[] = [
     slug: "telegram-stars-complete-guide",
     number: "04",
     title: "Complete Guide to Telegram Stars: Everything You Need to Know",
+    seoTitle: "Complete Guide to Telegram Stars: All You Need to Know",
     dek: "What Stars are, how to buy them, how creators use them, and how to turn earned Stars into spendable USDT.",
     category: "Telegram Guides",
     date: "December 4, 2024",
