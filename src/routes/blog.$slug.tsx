@@ -77,7 +77,7 @@ export const Route = createFileRoute("/blog/$slug")({
 
     return {
       meta: [
-        { title: `${post.title} — StarStore Insights` },
+        { title: post.title },
         { name: "description", content: post.dek },
         { property: "og:title", content: post.title },
         { property: "og:description", content: post.dek },
