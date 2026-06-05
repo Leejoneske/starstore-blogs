@@ -2,6 +2,7 @@ export type Post = {
   slug: string;
   number: string;
   title: string;
+  seoTitle?: string;
   dek: string;
   category: string;
   date: string;
