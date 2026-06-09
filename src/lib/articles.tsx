@@ -281,6 +281,7 @@ const StarsGuide = () => (
 );
 
 export const articles: Record<string, ComponentType> = {
+  "sell-telegram-stars-for-ton": SellStarsToTon,
   "starstore-now-on-starstore-app": Announcement,
   "how-to-cash-out-telegram-stars": CashOut,
   "starstore-knowledge-base": KnowledgeBase,
