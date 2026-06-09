@@ -16,6 +16,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "StarStore Insights" },
       { property: "og:description", content: "Editorial guides on Telegram Stars, USDT payouts, and the StarStore Mini App." },
       { property: "og:url", content: "https://blog.starstore.app/" },
+      { property: "og:type", content: "website" },
     ],
     links: [
       { rel: "canonical", href: "https://blog.starstore.app/" },
