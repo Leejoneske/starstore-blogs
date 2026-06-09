@@ -46,6 +46,12 @@ export const Route = createFileRoute("/blog/$slug")({
     };
 
     const faqByPost: Record<string, { q: string; a: string }[]> = {
+      "sell-telegram-stars-for-ton": [
+        { q: "How do I sell Telegram Stars for TON?", a: "Open @TgStarStore_bot in Telegram and launch the StarStore Mini App, go to the Sell page, enter the number of Stars (50 minimum, 80,000 maximum), paste your TON-network wallet address, and confirm. After the 21-day holding window, your payout is sent on the TON network." },
+        { q: "Can I convert Telegram Stars to TON or USDT?", a: "Yes. In the @TgStarStore_bot Mini App you can convert Stars to USDT on the TON network (the default and cheapest option), to native TON, or to TRC-20 USDT. Live rates are shown before you confirm." },
+        { q: "Where do I sell my Telegram Stars?", a: "Selling happens only inside the @TgStarStore_bot Telegram Mini App — there is no website form. Open the bot in Telegram, launch the Mini App, and use the Sell page." },
+        { q: "How long does it take to withdraw Stars to my wallet?", a: "Stars enter a 21-day holding window that protects against payment chargebacks. After the window clears, your TON or USDT payout is sent to the wallet address you provided." },
+      ],
       "how-to-cash-out-telegram-stars": [
         { q: "How do I cash out Telegram Stars?", a: "Open @TgStarStore_bot in Telegram, launch the Mini App, go to Sell, enter the amount of Stars (50 minimum, 80,000 maximum), paste your USDT TON-network wallet address, and confirm. After the 21-day holding window, USDT is sent to your wallet." },
         { q: "Why is there a 21-day hold on selling Stars?", a: "Stars are purchased through third-party payment rails that can be reversed by banks or providers days or weeks later. The 21-day window mirrors Telegram's own Stars-revenue window and protects against chargebacks, which keeps payouts reliable and our fees low." },
