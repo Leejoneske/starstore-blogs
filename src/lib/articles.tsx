@@ -181,7 +181,8 @@ const StarsGuide = () => (
 
     <h2>How to buy Stars</h2>
     <ol>
-      <li>Open StarStore and go to the Buy section.</li>
+      <li>Open <a href="https://t.me/TgStarStore_bot">@TgStarStore_bot</a> in Telegram and launch the StarStore Mini App.</li>
+      <li>Go to the Buy section.</li>
       <li>Pick a package (15, 25, 50, 100, 500, or 1,000 Stars).</li>
       <li>Pay in TON or USDT.</li>
       <li>Stars arrive instantly in your Telegram account.</li>
@@ -192,7 +193,7 @@ const StarsGuide = () => (
       <li><strong>Support creators</strong> by tipping in channels and bots that accept Stars.</li>
       <li><strong>Unlock premium content</strong> in Mini Apps and paid posts.</li>
       <li><strong>Gift</strong> Stars to other users.</li>
-      <li><strong>Sell</strong> earned Stars on StarStore for USDT (see the <a href="/blog/how-to-cash-out-telegram-stars">cash-out walkthrough</a>).</li>
+      <li><strong>Sell</strong> earned Stars for USDT or TON in the <a href="https://t.me/TgStarStore_bot">@TgStarStore_bot</a> Mini App (see the <a href="/blog/how-to-cash-out-telegram-stars">cash-out walkthrough</a>).</li>
     </ul>
 
     <h2>Why people choose StarStore</h2>

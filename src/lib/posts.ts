@@ -14,6 +14,17 @@ export const SITE_URL = "https://blog.starstore.app";
 
 export const posts: Post[] = [
   {
+    slug: "sell-telegram-stars-for-ton",
+    number: "05",
+    title: "How to Sell Telegram Stars for TON: Convert & Withdraw Guide",
+    seoTitle: "Sell Telegram Stars for TON — Convert & Withdraw Guide",
+    dek: "A complete walkthrough for selling, converting, and withdrawing Telegram Stars to TON (and USDT) — done entirely inside the @TgStarStore_bot Telegram Mini App.",
+    category: "Selling Stars",
+    date: "June 9, 2026",
+    readTime: "6 min read",
+    hero: "/og/sell-telegram-stars-for-ton.jpg",
+  },
+  {
     slug: "starstore-now-on-starstore-app",
     number: "01",
     title: "StarStore is Now Officially on starstore.app",

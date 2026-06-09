@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Star, ArrowUpRight } from "lucide-react";
 import type { Post } from "@/lib/posts";
-import { getAdjacentPosts } from "@/lib/posts";
+import { getAdjacentPosts, posts } from "@/lib/posts";
 import { SiteHeader } from "./SiteHeader";
 import { SiteFooter } from "./SiteFooter";
 
@@ -22,7 +22,7 @@ export function ArticleLayout({ post, children }: { post: Post; children: React.
 
             <div className="mt-8 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
               <span className="text-gold flex items-center gap-1">
-                <Star className="w-3 h-3 fill-gold" /> Article {post.number} / 04
+                <Star className="w-3 h-3 fill-gold" /> Article {post.number} / {String(posts.length).padStart(2, "0")}
               </span>
               <span>·</span>
               <span>{post.category}</span>
