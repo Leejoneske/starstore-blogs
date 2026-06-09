@@ -1,5 +1,79 @@
 import type { ComponentType } from "react";
 
+const SellStarsToTon = () => (
+  <>
+    <p>
+      Telegram Stars are easy to earn but hard to spend outside Telegram. StarStore fixes that: you can{" "}
+      <strong>sell, convert, and withdraw your Telegram Stars to TON</strong> (or USDT on the TON network) in
+      minutes — and the entire process happens inside the{" "}
+      <a href="https://t.me/TgStarStore_bot">@TgStarStore_bot</a> Telegram Mini App, not on any website.
+    </p>
+
+    <h2>Where you sell: the @TgStarStore_bot Mini App</h2>
+    <p>
+      There is no web form for selling Stars. Everything — buying, selling, converting Stars to TON,
+      referrals, and withdrawals — is handled inside Telegram through{" "}
+      <a href="https://t.me/TgStarStore_bot">@TgStarStore_bot</a>. Open the bot in Telegram, tap{" "}
+      <strong>Start</strong>, and launch the StarStore Mini App. This keeps your account, balances, and
+      payouts tied to your Telegram identity and protected by Telegram's own security.
+    </p>
+
+    <h2>How to sell Telegram Stars for TON — step by step</h2>
+    <ol>
+      <li>Open <a href="https://t.me/TgStarStore_bot">@TgStarStore_bot</a> in Telegram and launch the Mini App.</li>
+      <li>Go to the <strong>Sell</strong> page.</li>
+      <li>Enter the number of Stars you want to convert (<strong>50 minimum, 80,000 maximum</strong> per transaction).</li>
+      <li>Choose your payout: <strong>USDT on the TON network</strong> (default and cheapest) — TRC-20 is also supported if you prefer.</li>
+      <li>Paste your <strong>TON-network wallet address</strong>. No memo or tag is required.</li>
+      <li>Review the live rate shown in the Mini App, then confirm. You'll get an order ID instantly.</li>
+      <li>Your Stars enter a <strong>21-day holding window</strong>. After it clears, your payout is sent to your wallet.</li>
+      <li>Send your order ID to the bot at any time to check the current status.</li>
+    </ol>
+
+    <h2>Converting Stars to TON vs. USDT</h2>
+    <p>
+      "Selling," "converting," "cashing out," and "withdrawing" Stars all describe the same flow in StarStore:
+      you hand over Stars and receive crypto on the TON network. Most users settle in{" "}
+      <strong>USDT on TON</strong> because it's a stable value and the cheapest path. If you specifically want
+      native <strong>TON</strong> or TRC-20 USDT, you can request it — just note that off-TON networks may
+      carry a transaction cost you cover yourself, which eats into small payouts.
+    </p>
+
+    <h2>Why is there a 21-day holding window?</h2>
+    <p>
+      Stars are bought through third-party payment rails (cards, wallets, processors) that can reverse a
+      charge days or weeks later. The 21-day hold mirrors Telegram's own Stars-revenue window and protects
+      against chargebacks — which is exactly what keeps StarStore's payouts reliable and our fees low.
+    </p>
+
+    <h2>Limits & requirements at a glance</h2>
+    <ul>
+      <li><strong>Minimum sale:</strong> 50 Stars per transaction.</li>
+      <li><strong>Maximum sale:</strong> 80,000 Stars per transaction.</li>
+      <li><strong>Payout networks:</strong> USDT on TON (default), TON, or TRC-20 USDT.</li>
+      <li><strong>Wallet:</strong> a valid TON-network address (no memo/tag needed).</li>
+      <li><strong>Holding period:</strong> 21 days before settlement.</li>
+      <li><strong>Where:</strong> exclusively inside <a href="https://t.me/TgStarStore_bot">@TgStarStore_bot</a>.</li>
+    </ul>
+
+    <h2>Common mistakes to avoid</h2>
+    <ul>
+      <li><strong>Wrong wallet address:</strong> crypto transfers can't be reversed — always paste and verify before confirming.</li>
+      <li><strong>Wrong network:</strong> a TON wallet address is for the TON network; don't paste an Ethereum or BSC address.</li>
+      <li><strong>Off-bot deals:</strong> only transactions through <a href="https://t.me/TgStarStore_bot">@TgStarStore_bot</a> are tracked and protected.</li>
+    </ul>
+
+    <p>
+      Ready to convert your Stars? Open{" "}
+      <a href="https://t.me/TgStarStore_bot">@TgStarStore_bot</a>, launch the Mini App, and head to the Sell
+      page. For limits, the referral program, and refund policy, see the{" "}
+      <a href="/blog/starstore-knowledge-base">StarStore Knowledge Base</a>.
+    </p>
+  </>
+);
+
+
+
 const Announcement = () => (
   <>
     <p>
@@ -181,7 +255,8 @@ const StarsGuide = () => (
 
     <h2>How to buy Stars</h2>
     <ol>
-      <li>Open StarStore and go to the Buy section.</li>
+      <li>Open <a href="https://t.me/TgStarStore_bot">@TgStarStore_bot</a> in Telegram and launch the StarStore Mini App.</li>
+      <li>Go to the Buy section.</li>
       <li>Pick a package (15, 25, 50, 100, 500, or 1,000 Stars).</li>
       <li>Pay in TON or USDT.</li>
       <li>Stars arrive instantly in your Telegram account.</li>
@@ -192,7 +267,7 @@ const StarsGuide = () => (
       <li><strong>Support creators</strong> by tipping in channels and bots that accept Stars.</li>
       <li><strong>Unlock premium content</strong> in Mini Apps and paid posts.</li>
       <li><strong>Gift</strong> Stars to other users.</li>
-      <li><strong>Sell</strong> earned Stars on StarStore for USDT (see the <a href="/blog/how-to-cash-out-telegram-stars">cash-out walkthrough</a>).</li>
+      <li><strong>Sell</strong> earned Stars for USDT or TON in the <a href="https://t.me/TgStarStore_bot">@TgStarStore_bot</a> Mini App (see the <a href="/blog/how-to-cash-out-telegram-stars">cash-out walkthrough</a>).</li>
     </ul>
 
     <h2>Why people choose StarStore</h2>
@@ -206,6 +281,7 @@ const StarsGuide = () => (
 );
 
 export const articles: Record<string, ComponentType> = {
+  "sell-telegram-stars-for-ton": SellStarsToTon,
   "starstore-now-on-starstore-app": Announcement,
   "how-to-cash-out-telegram-stars": CashOut,
   "starstore-knowledge-base": KnowledgeBase,
