@@ -9,7 +9,7 @@ const SellStarsToTon = () => (
       <a href="https://t.me/TgStarStore_bot">@TgStarStore_bot</a> Telegram Mini App, not on any website.
     </p>
 
-    <h2>Where you sell: the @TgStarStore_bot Mini App</h2>
+    <h2>Where you sell: the <a href="https://t.me/TgStarStore_bot">@TgStarStore_bot</a> Mini App</h2>
     <p>
       There is no web form for selling Stars. Everything — buying, selling, converting Stars to TON,
       referrals, and withdrawals — is handled inside Telegram through{" "}
@@ -93,7 +93,7 @@ const Announcement = () => (
     <h2>What changes for you</h2>
     <ul>
       <li><strong>New URL:</strong> bookmark <a href="https://starstore.app">starstore.app</a>. Old <code>starstore.site</code> links will be redirected during the transition window.</li>
-      <li><strong>Same Telegram bot:</strong> <code>@TgStarStore_bot</code> is unchanged. Open the Mini App from the bot exactly as before.</li>
+      <li><strong>Same Telegram bot:</strong> <a href="https://t.me/TgStarStore_bot">@TgStarStore_bot</a> is unchanged. Open the Mini App from the bot exactly as before.</li>
       <li><strong>Same accounts & balances:</strong> your history, referrals, ambassador status, and pending payouts carry over. Nothing to re-register.</li>
     </ul>
 
@@ -171,7 +171,7 @@ const KnowledgeBase = () => (
     <p>
       StarStore is a Telegram Mini App launched on December 4, 2024 that lets users buy and sell Telegram
       Stars and Telegram Premium subscriptions, with instant USDT settlement on supported flows. Access is
-      via <code>@TgStarStore_bot</code>.
+      via <a href="https://t.me/TgStarStore_bot">@TgStarStore_bot</a>.
     </p>
 
     <h2>Star packages</h2>
@@ -226,7 +226,7 @@ const KnowledgeBase = () => (
       for sell orders. There's no waiting on the 21-day hold to see your bonus anymore.
     </p>
     <p>
-      Referrals must come through <code>@TgStarStore_bot</code> with your link — off-bot transactions are not
+      Referrals must come through <a href="https://t.me/TgStarStore_bot">@TgStarStore_bot</a> with your link — off-bot transactions are not
       tracked. Minimum withdrawal is 0.5 USDT to TON or TRC-20 USDT.
     </p>
 
