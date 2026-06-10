@@ -46,6 +46,12 @@ export const Route = createFileRoute("/blog/$slug")({
     };
 
     const faqByPost: Record<string, { q: string; a: string }[]> = {
+      "how-to-earn-money-on-telegram": [
+        { q: "How can I earn real cash on Telegram?", a: "Join the StarStore referral program inside @TgStarStore_bot. Grab your referral link from the Referrals section, share it, and earn 0.5 USDT for every person who joins through your link and becomes active. Earnings are paid in real USDT you can withdraw to your wallet." },
+        { q: "How much does the StarStore referral program pay?", a: "You earn 0.5 USDT for every referred user who becomes active — defined as buying at least 100 Stars cumulatively, selling at least 100 Stars, or buying any Telegram Premium plan. Bonuses are credited instantly when the target is reached." },
+        { q: "Is the StarStore referral program a real Telegram side hustle?", a: "Yes. It pays in USDT (real cryptocurrency), it's free to join, bonuses are credited instantly, and you can withdraw from just 0.5 USDT to TON or TRC-20 USDT. The more active users you refer, the more you earn." },
+        { q: "Where do I get my StarStore referral link?", a: "Open @TgStarStore_bot in Telegram, launch the StarStore Mini App, and go to the Referrals section to copy your unique link and track invited users in real time." },
+      ],
       "sell-telegram-stars-for-ton": [
         { q: "How do I sell Telegram Stars for TON?", a: "Open @TgStarStore_bot in Telegram and launch the StarStore Mini App, go to the Sell page, enter the number of Stars (50 minimum, 80,000 maximum), paste your TON-network wallet address, and confirm. After the 21-day holding window, your payout is sent on the TON network." },
         { q: "Can I convert Telegram Stars to TON or USDT?", a: "Yes. In the @TgStarStore_bot Mini App you can convert Stars to USDT on the TON network (the default and cheapest option), to native TON, or to TRC-20 USDT. Live rates are shown before you confirm." },
@@ -115,6 +121,16 @@ export const Route = createFileRoute("/blog/$slug")({
             "Telegram Stars withdrawal",
             "Telegram Premium",
             "Telegram Mini App",
+            "earn money on Telegram",
+            "how to earn on Telegram",
+            "make real cash on Telegram",
+            "Telegram side hustle that really pays",
+            "earn StarStore",
+            "StarStore referral program",
+            "Telegram referral program",
+            "earn USDT on Telegram",
+            "make money online with Telegram",
+            "Telegram money making app",
             "TgStarStore_bot",
             "starstore.app",
           ].join(", "),
