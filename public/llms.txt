@@ -6,6 +6,7 @@ StarStore is a Telegram Mini App that lets users buy and sell Telegram Stars and
 
 ## Articles
 
+- [How to Earn Real Cash on Telegram: The StarStore Referral Program](https://blog.starstore.app/blog/how-to-earn-money-on-telegram): A legit Telegram side hustle that really pays — earn 0.5 USDT per active referral with the StarStore referral program, all tracked inside @TgStarStore_bot.
 - [How to Sell Telegram Stars for TON: Convert & Withdraw Guide](https://blog.starstore.app/blog/sell-telegram-stars-for-ton): Step-by-step guide to selling, converting, and withdrawing Telegram Stars to TON or USDT — done inside the @TgStarStore_bot Telegram Mini App.
 - [StarStore is Now Officially on starstore.app](https://blog.starstore.app/blog/starstore-now-on-starstore-app): Announcement — domain move from starstore.site to starstore.app and what changes for users.
 - [How to Cash Out Telegram Stars for Real Money](https://blog.starstore.app/blog/how-to-cash-out-telegram-stars): Step-by-step walkthrough for selling Telegram Stars and receiving USDT on the TON network.
