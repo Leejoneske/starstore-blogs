@@ -14,6 +14,17 @@ export const SITE_URL = "https://blog.starstore.app";
 
 export const posts: Post[] = [
   {
+    slug: "how-to-earn-money-on-telegram",
+    number: "06",
+    title: "How to Earn Real Cash on Telegram: The StarStore Referral Program",
+    seoTitle: "How to Earn Money on Telegram — StarStore Referral Program",
+    dek: "A legit Telegram side hustle that really pays: earn real cash with the StarStore referral program. Share your link inside @TgStarStore_bot and get paid in USDT.",
+    category: "Earn Money",
+    date: "June 10, 2026",
+    readTime: "6 min read",
+    hero: "/og/how-to-earn-on-telegram.jpg",
+  },
+  {
     slug: "sell-telegram-stars-for-ton",
     number: "05",
     title: "How to Sell Telegram Stars for TON: Convert & Withdraw Guide",
