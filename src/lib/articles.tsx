@@ -1,5 +1,75 @@
 import type { ComponentType } from "react";
 
+const EarnOnTelegram = () => (
+  <>
+    <p>
+      Looking for a <strong>Telegram side hustle that really pays</strong>? StarStore's referral program is
+      one of the simplest ways to <strong>make real cash on Telegram</strong> — no inventory, no upfront cost,
+      and no waiting weeks for a payout. You share one link, your friends use the{" "}
+      <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a> Mini App, and you
+      <strong> earn StarStore</strong> rewards in real USDT.
+    </p>
+
+    <h2>What is the StarStore referral program?</h2>
+    <p>
+      The referral program pays you <strong>0.5 USDT</strong> for every person you invite who becomes an{" "}
+      <em>active</em> user. It's a genuine way to earn money on Telegram: you're rewarded in cryptocurrency you
+      can withdraw to your own wallet, not points or coupons. Everything is tracked automatically inside{" "}
+      <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a>.
+    </p>
+
+    <h2>How to earn cash on Telegram — step by step</h2>
+    <ol>
+      <li>Open <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a> in Telegram and launch the StarStore Mini App.</li>
+      <li>Go to the <strong>Referrals</strong> section to grab your unique referral link.</li>
+      <li>Share your link with friends, in groups, channels, or on social media.</li>
+      <li>When someone joins through your link and becomes active, you instantly earn <strong>0.5 USDT</strong>.</li>
+      <li>Watch your referrals and earnings update in real time inside the Mini App.</li>
+      <li>Withdraw your balance to TON or TRC-20 USDT once you reach the <strong>0.5 USDT</strong> minimum.</li>
+    </ol>
+
+    <h2>When does a referral count?</h2>
+    <p>
+      A referred user becomes <em>active</em> — and your bonus lands — the moment they do any one of the
+      following:
+    </p>
+    <ul>
+      <li>Buy at least <strong>100 Stars</strong> (cumulative across orders), <strong>or</strong></li>
+      <li>Sell at least <strong>100 Stars</strong>, <strong>or</strong></li>
+      <li>Buy any <strong>Telegram Premium</strong> plan.</li>
+    </ul>
+    <p>
+      Bonuses are credited <strong>instantly</strong> the moment the target is reached — including for sell
+      orders. You don't have to wait on any holding period to see your referral earnings.
+    </p>
+
+    <h2>Why this is a Telegram side hustle that actually pays</h2>
+    <ul>
+      <li><strong>Real money:</strong> you're paid in USDT, not in-app credit you can't cash out.</li>
+      <li><strong>Zero cost:</strong> getting your link and sharing it is completely free.</li>
+      <li><strong>Instant rewards:</strong> bonuses hit your balance the second a referral becomes active.</li>
+      <li><strong>Low withdrawal threshold:</strong> cash out from just <strong>0.5 USDT</strong>.</li>
+      <li><strong>Scales with you:</strong> the more active users you bring in, the more you earn.</li>
+    </ul>
+
+    <h2>Tips to maximize your StarStore earnings</h2>
+    <ul>
+      <li>Share where people already use Telegram Stars — gaming groups, creator channels, and crypto communities convert best.</li>
+      <li>Explain the value: people can <a href="/blog/how-to-cash-out-telegram-stars">cash out Telegram Stars</a> and buy Stars or Premium at great rates.</li>
+      <li>Pin your link in groups you run and add it to your bio.</li>
+      <li>Only referrals that come through <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a> with your link are tracked — off-bot shares don't count.</li>
+    </ul>
+
+    <p>
+      Ready to start earning? Open{" "}
+      <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a>, launch the Mini App, and
+      grab your referral link. For full limits and policies, see the{" "}
+      <a href="/blog/starstore-knowledge-base">StarStore Knowledge Base</a>.
+    </p>
+  </>
+);
+
+
 const SellStarsToTon = () => (
   <>
     <p>
