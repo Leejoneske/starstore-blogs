@@ -6,21 +6,21 @@ const SellStarsToTon = () => (
       Telegram Stars are easy to earn but hard to spend outside Telegram. StarStore fixes that: you can{" "}
       <strong>sell, convert, and withdraw your Telegram Stars to TON</strong> (or USDT on the TON network) in
       minutes — and the entire process happens inside the{" "}
-      <a href="https://t.me/TgStarStore_bot">@TgStarStore_bot</a> Telegram Mini App, not on any website.
+      <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a> Telegram Mini App, not on any website.
     </p>
 
-    <h2>Where you sell: the @TgStarStore_bot Mini App</h2>
+    <h2>Where you sell: the <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a> Mini App</h2>
     <p>
       There is no web form for selling Stars. Everything — buying, selling, converting Stars to TON,
       referrals, and withdrawals — is handled inside Telegram through{" "}
-      <a href="https://t.me/TgStarStore_bot">@TgStarStore_bot</a>. Open the bot in Telegram, tap{" "}
+      <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a>. Open the bot in Telegram, tap{" "}
       <strong>Start</strong>, and launch the StarStore Mini App. This keeps your account, balances, and
       payouts tied to your Telegram identity and protected by Telegram's own security.
     </p>
 
     <h2>How to sell Telegram Stars for TON — step by step</h2>
     <ol>
-      <li>Open <a href="https://t.me/TgStarStore_bot">@TgStarStore_bot</a> in Telegram and launch the Mini App.</li>
+      <li>Open <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a> in Telegram and launch the Mini App.</li>
       <li>Go to the <strong>Sell</strong> page.</li>
       <li>Enter the number of Stars you want to convert (<strong>50 minimum, 80,000 maximum</strong> per transaction).</li>
       <li>Choose your payout: <strong>USDT on the TON network</strong> (default and cheapest) — TRC-20 is also supported if you prefer.</li>
@@ -53,19 +53,19 @@ const SellStarsToTon = () => (
       <li><strong>Payout networks:</strong> USDT on TON (default), TON, or TRC-20 USDT.</li>
       <li><strong>Wallet:</strong> a valid TON-network address (no memo/tag needed).</li>
       <li><strong>Holding period:</strong> 21 days before settlement.</li>
-      <li><strong>Where:</strong> exclusively inside <a href="https://t.me/TgStarStore_bot">@TgStarStore_bot</a>.</li>
+      <li><strong>Where:</strong> exclusively inside <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a>.</li>
     </ul>
 
     <h2>Common mistakes to avoid</h2>
     <ul>
       <li><strong>Wrong wallet address:</strong> crypto transfers can't be reversed — always paste and verify before confirming.</li>
       <li><strong>Wrong network:</strong> a TON wallet address is for the TON network; don't paste an Ethereum or BSC address.</li>
-      <li><strong>Off-bot deals:</strong> only transactions through <a href="https://t.me/TgStarStore_bot">@TgStarStore_bot</a> are tracked and protected.</li>
+      <li><strong>Off-bot deals:</strong> only transactions through <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a> are tracked and protected.</li>
     </ul>
 
     <p>
       Ready to convert your Stars? Open{" "}
-      <a href="https://t.me/TgStarStore_bot">@TgStarStore_bot</a>, launch the Mini App, and head to the Sell
+      <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a>, launch the Mini App, and head to the Sell
       page. For limits, the referral program, and refund policy, see the{" "}
       <a href="/blog/starstore-knowledge-base">StarStore Knowledge Base</a>.
     </p>
@@ -93,7 +93,7 @@ const Announcement = () => (
     <h2>What changes for you</h2>
     <ul>
       <li><strong>New URL:</strong> bookmark <a href="https://starstore.app">starstore.app</a>. Old <code>starstore.site</code> links will be redirected during the transition window.</li>
-      <li><strong>Same Telegram bot:</strong> <code>@TgStarStore_bot</code> is unchanged. Open the Mini App from the bot exactly as before.</li>
+      <li><strong>Same Telegram bot:</strong> <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a> is unchanged. Open the Mini App from the bot exactly as before.</li>
       <li><strong>Same accounts & balances:</strong> your history, referrals, ambassador status, and pending payouts carry over. Nothing to re-register.</li>
     </ul>
 
@@ -127,7 +127,7 @@ const CashOut = () => (
 
     <h2>Step-by-step: selling your Stars</h2>
     <ol>
-      <li>Open <a href="https://t.me/TgStarStore_bot">@TgStarStore_bot</a> in Telegram and launch the Mini App.</li>
+      <li>Open <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a> in Telegram and launch the Mini App.</li>
       <li>Go to the <strong>Sell</strong> page.</li>
       <li>Enter the number of Stars you want to sell (50 minimum, 80,000 maximum per transaction).</li>
       <li>Paste your <strong>USDT TON-network</strong> wallet address. No memo or tag is needed.</li>
@@ -171,7 +171,7 @@ const KnowledgeBase = () => (
     <p>
       StarStore is a Telegram Mini App launched on December 4, 2024 that lets users buy and sell Telegram
       Stars and Telegram Premium subscriptions, with instant USDT settlement on supported flows. Access is
-      via <code>@TgStarStore_bot</code>.
+      via <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a>.
     </p>
 
     <h2>Star packages</h2>
@@ -194,13 +194,13 @@ const KnowledgeBase = () => (
       </li>
     </ul>
     <p>
-      Pricing is dynamic and shown live in the <a href="https://t.me/TgStarStore_bot">Mini App</a> — same
+      Pricing is dynamic and shown live in the <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">Mini App</a> — same
       goes for Telegram Premium (3, 6, and 12-month plans).
     </p>
 
     <h2>Selling Stars</h2>
     <p>
-      To start a sell order, open <a href="https://t.me/TgStarStore_bot">@TgStarStore_bot</a> and launch the
+      To start a sell order, open <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a> and launch the
       Mini App.
     </p>
     <ul>
@@ -212,7 +212,7 @@ const KnowledgeBase = () => (
 
     <h2>Referral program</h2>
     <p>
-      Open <a href="https://t.me/TgStarStore_bot">@TgStarStore_bot</a> to get your referral link and track
+      Open <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a> to get your referral link and track
       invited users in real time.
     </p>
     <p>Earn 0.5 USDT for every referred user who becomes <em>active</em>. A referral becomes active when they:</p>
@@ -226,7 +226,7 @@ const KnowledgeBase = () => (
       for sell orders. There's no waiting on the 21-day hold to see your bonus anymore.
     </p>
     <p>
-      Referrals must come through <code>@TgStarStore_bot</code> with your link — off-bot transactions are not
+      Referrals must come through <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a> with your link — off-bot transactions are not
       tracked. Minimum withdrawal is 0.5 USDT to TON or TRC-20 USDT.
     </p>
 
@@ -255,7 +255,7 @@ const StarsGuide = () => (
 
     <h2>How to buy Stars</h2>
     <ol>
-      <li>Open <a href="https://t.me/TgStarStore_bot">@TgStarStore_bot</a> in Telegram and launch the StarStore Mini App.</li>
+      <li>Open <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a> in Telegram and launch the StarStore Mini App.</li>
       <li>Go to the Buy section.</li>
       <li>Pick a package (15, 25, 50, 100, 500, or 1,000 Stars).</li>
       <li>Pay in TON or USDT.</li>
@@ -267,7 +267,7 @@ const StarsGuide = () => (
       <li><strong>Support creators</strong> by tipping in channels and bots that accept Stars.</li>
       <li><strong>Unlock premium content</strong> in Mini Apps and paid posts.</li>
       <li><strong>Gift</strong> Stars to other users.</li>
-      <li><strong>Sell</strong> earned Stars for USDT or TON in the <a href="https://t.me/TgStarStore_bot">@TgStarStore_bot</a> Mini App (see the <a href="/blog/how-to-cash-out-telegram-stars">cash-out walkthrough</a>).</li>
+      <li><strong>Sell</strong> earned Stars for USDT or TON in the <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a> Mini App (see the <a href="/blog/how-to-cash-out-telegram-stars">cash-out walkthrough</a>).</li>
     </ul>
 
     <h2>Why people choose StarStore</h2>
