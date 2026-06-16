@@ -247,8 +247,8 @@ const EarnOnTelegram = () => (
       following:
     </p>
     <ul>
-      <li>Buy at least <strong>100 Stars</strong> (cumulative across orders), <strong>or</strong></li>
-      <li>Sell at least <strong>100 Stars</strong>, <strong>or</strong></li>
+      <li>Buy at least <strong>200 Stars</strong> (cumulative across orders), <strong>or</strong></li>
+      <li>Sell at least <strong>200 Stars</strong>, <strong>or</strong></li>
       <li>Buy any <strong>Telegram Premium</strong> plan.</li>
     </ul>
     <p>
@@ -501,8 +501,8 @@ const KnowledgeBase = () => (
     </p>
     <p>Earn 0.5 USDT for every referred user who becomes <em>active</em>. A referral becomes active when they:</p>
     <ul>
-      <li>Buy at least 100 Stars (cumulative across orders), <strong>or</strong></li>
-      <li>Sell at least 100 Stars, <strong>or</strong></li>
+      <li>Buy at least 200 Stars (cumulative across orders), <strong>or</strong></li>
+      <li>Sell at least 200 Stars, <strong>or</strong></li>
       <li>Buy any Telegram Premium plan.</li>
     </ul>
     <p>
