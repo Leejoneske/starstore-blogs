@@ -54,7 +54,7 @@ export const Route = createFileRoute("/blog/$slug")({
       ],
       "how-to-earn-money-on-telegram": [
         { q: "How can I earn real cash on Telegram?", a: "Join the StarStore referral program inside @TgStarStore_bot. Grab your referral link from the Referrals section, share it, and earn 0.5 USDT for every person who joins through your link and becomes active. Earnings are paid in real USDT you can withdraw to your wallet." },
-        { q: "How much does the StarStore referral program pay?", a: "You earn 0.5 USDT for every referred user who becomes active: defined as buying at least 100 Stars cumulatively, selling at least 100 Stars, or buying any Telegram Premium plan. Bonuses are credited instantly when the target is reached." },
+        { q: "How much does the StarStore referral program pay?", a: "You earn 0.5 USDT for every referred user who becomes active: defined as buying at least 200 Stars cumulatively, selling at least 200 Stars, or buying any Telegram Premium plan. Bonuses are credited instantly when the target is reached." },
         { q: "Is the StarStore referral program a real Telegram side hustle?", a: "Yes. It pays in USDT (real cryptocurrency), it's free to join, bonuses are credited instantly, and you can withdraw from just 0.5 USDT to TON or TRC-20 USDT. The more active users you refer, the more you earn." },
         { q: "Where do I get my StarStore referral link?", a: "Open @TgStarStore_bot in Telegram, launch the StarStore Mini App, and go to the Referrals section to copy your unique link and track invited users in real time." },
       ],
@@ -72,7 +72,7 @@ export const Route = createFileRoute("/blog/$slug")({
       ],
       "starstore-knowledge-base": [
         { q: "What is the minimum and maximum order for buying Stars?", a: "You can buy from 15 Stars up to 1,000,000 Stars per order. Orders under 50 Stars are account-based and can only be delivered to your own Telegram account; orders of 50 Stars and above can be sent to any Telegram username as a gift." },
-        { q: "How does the StarStore referral program work?", a: "You earn 0.5 USDT for every referred user who becomes active: defined as buying at least 100 Stars cumulatively, selling at least 100 Stars, or buying any Telegram Premium plan. Bonuses are credited instantly when the target is reached, including for sell orders." },
+        { q: "How does the StarStore referral program work?", a: "You earn 0.5 USDT for every referred user who becomes active: defined as buying at least 200 Stars cumulatively, selling at least 200 Stars, or buying any Telegram Premium plan. Bonuses are credited instantly when the target is reached, including for sell orders." },
         { q: "What is the minimum referral withdrawal?", a: "0.5 USDT, paid out to TON or TRC-20 USDT." },
         { q: "What is StarStore's refund policy?", a: "Refunds are issued for overcharges, internal server errors, or technical issues on our side. They are not available for Telegram API issues, unrelated external problems, or change of mind. Send /paysupport in the bot to request one. Limit: one refund request per user per month." },
       ],
