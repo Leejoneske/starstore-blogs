@@ -46,6 +46,12 @@ export const Route = createFileRoute("/blog/$slug")({
     };
 
     const faqByPost: Record<string, { q: string; a: string }[]> = {
+      "what-is-usdt-and-usdt-on-ton": [
+        { q: "What is USDT?", a: "USDT (Tether USD) is a stablecoin — a cryptocurrency always worth exactly $1 USD. It is backed 1-to-1 by Tether's real-world reserves and is the most-used stablecoin in the world with a market cap above $106 billion. StarStore uses USDT to pay out sellers and referral earners." },
+        { q: "What is USDT on TON?", a: "USDT on TON is a native deployment of Tether's USDT stablecoin on The Open Network (TON) blockchain — the blockchain integrated into Telegram. Launched in April 2024, it lets Telegram users send USDT instantly and for free to any Telegram contact via the @wallet bot." },
+        { q: "How is USDT on TON different from TRC-20 USDT?", a: "Both are always worth $1, but USDT on TON has near-zero gas fees (around $0.01 on-chain), instant confirmations, and free transfers between Telegram users via the @wallet bot. TRC-20 USDT has higher fees and requires a separate TRON wallet." },
+        { q: "Why does StarStore pay in USDT on TON?", a: "TON is StarStore's default payout network because it has the lowest fees, instant settlement, and integrates natively with Telegram wallets. This means more of your earnings reach your wallet without being eaten up by transaction costs." },
+      ],
       "how-to-earn-money-on-telegram": [
         { q: "How can I earn real cash on Telegram?", a: "Join the StarStore referral program inside @TgStarStore_bot. Grab your referral link from the Referrals section, share it, and earn 0.5 USDT for every person who joins through your link and becomes active. Earnings are paid in real USDT you can withdraw to your wallet." },
         { q: "How much does the StarStore referral program pay?", a: "You earn 0.5 USDT for every referred user who becomes active — defined as buying at least 100 Stars cumulatively, selling at least 100 Stars, or buying any Telegram Premium plan. Bonuses are credited instantly when the target is reached." },
@@ -132,6 +138,17 @@ export const Route = createFileRoute("/blog/$slug")({
             "make money online with Telegram",
             "Telegram money making app",
             "TgStarStore_bot",
+            "what is USDT",
+            "what is USDT on TON",
+            "USDT stablecoin explained",
+            "USDT TON network",
+            "USDt TON",
+            "TON blockchain",
+            "The Open Network",
+            "Tether USDT",
+            "USDT vs TRC-20",
+            "crypto stablecoin",
+            "TON wallet USDT",
             "starstore.app",
           ].join(", "),
         },
@@ -184,3 +201,4 @@ function ArticlePage() {
     </ArticleLayout>
   );
 }
+
