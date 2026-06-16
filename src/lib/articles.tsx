@@ -48,7 +48,7 @@ const UsdtAndUsdtOnTon = () => (
     </p>
     <p>
       USDT does not have its own blockchain. Instead, it operates on top of established networks like
-      Ethereum, TRON, and now <strong>The Open Network (TON)</strong> — each version of USDT is the same
+      Ethereum, TRON, and now <strong>The Open Network (TON)</strong>: each version of USDT is the same
       stablecoin but with different fee structures, speeds, and wallet requirements depending on which
       network you use.
     </p>
