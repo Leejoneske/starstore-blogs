@@ -1,5 +1,192 @@
 import type { ComponentType } from "react";
 
+const UsdtAndUsdtOnTon = () => (
+  <>
+    <p>
+      If you've used <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a> to sell Telegram Stars or
+      withdraw your StarStore referral earnings, you've already received <strong>USDT on TON</strong> — the
+      world's most-used stablecoin, running on Telegram's own blockchain. This guide explains exactly what
+      USDT is, what the TON network is, and why that combination matters for anyone using StarStore.
+    </p>
+
+    <div className="my-8 rounded-lg overflow-hidden border border-rule">
+      <div className="relative w-full" style={{paddingBottom: "56.25%"}}>
+        <iframe
+          className="absolute inset-0 w-full h-full"
+          src="https://www.youtube.com/embed/ei0ObpQh5wc"
+          title="What is USDT on TON? Explained"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        />
+      </div>
+      <p className="text-center text-sm text-muted-foreground py-3 font-mono">
+        Watch on YouTube:{" "}
+        <a
+          href="https://youtu.be/ei0ObpQh5wc"
+          target="_blank"
+          rel="noreferrer"
+          className="underline hover:text-gold"
+        >
+          youtu.be/ei0ObpQh5wc
+        </a>
+      </p>
+    </div>
+
+    <h2>What is USDT?</h2>
+    <p>
+      <strong>USDT</strong> (short for Tether USD) is a <em>stablecoin</em> — a type of cryptocurrency that
+      is always worth exactly <strong>$1 USD</strong>. It was launched in 2014 by Tether Limited and is now
+      the most-used stablecoin on the planet, with a market cap above <strong>$106 billion</strong> and over{" "}
+      <strong>$85 billion</strong> in daily trading volume.
+    </p>
+    <p>
+      Unlike Bitcoin or TON — whose prices can swing wildly — 1 USDT is always 1 US dollar. Each token is
+      backed 1-to-1 by Tether's real-world reserves (cash, treasury bills, and other assets). That stability
+      is exactly why StarStore uses USDT to pay out sellers and referral earners: you always know what you're
+      getting.
+    </p>
+
+    <h2>Why does USDT matter?</h2>
+    <ul>
+      <li><strong>Price stability:</strong> you hold value without worrying about overnight crypto crashes.</li>
+      <li><strong>Global reach:</strong> anyone with a crypto wallet can receive USDT — no bank account needed.</li>
+      <li><strong>Fast settlement:</strong> on the right network, USDT moves in seconds, not days.</li>
+      <li>
+        <strong>StarStore payouts:</strong> when you{" "}
+        <a href="/blog/how-to-cash-out-telegram-stars">sell Telegram Stars</a> or earn from the{" "}
+        <a href="/blog/how-to-earn-money-on-telegram">StarStore referral program</a>, you are paid in USDT —
+        real dollars you can spend, trade, or keep.
+      </li>
+    </ul>
+
+    <h2>What is the TON network?</h2>
+    <p>
+      <strong>TON</strong> (The Open Network) is a fast, low-cost Layer-1 blockchain that was originally
+      designed by the Telegram team and is now developed by the independent TON Foundation. It is the
+      blockchain natively integrated into Telegram — the same app you use every day.
+    </p>
+    <p>
+      TON's key strengths are its <strong>speed</strong> (transactions confirm in seconds), its{" "}
+      <strong>low fees</strong> (fractions of a cent), and its <strong>massive reach</strong> — over{" "}
+      900 million monthly Telegram users have access to a TON wallet without downloading anything extra.
+    </p>
+
+    <h2>What is USDT on TON?</h2>
+    <p>
+      In April 2024, Tether launched a <strong>native USDT token directly on the TON blockchain</strong>.
+      This is commonly called <em>USDT on TON</em> or <em>USDt-TON</em>. It is the same stablecoin — always
+      $1 — but it lives on the TON network instead of Ethereum or TRON.
+    </p>
+    <p>
+      Because it is native to TON, it plugs straight into Telegram's built-in{" "}
+      <strong>@wallet</strong> bot. That means you can send USDT to any Telegram contact{" "}
+      <strong>instantly and for free</strong> — just like sending a message or a sticker.
+    </p>
+
+    <h2>USDT on TON vs. other versions of USDT</h2>
+    <ul>
+      <li>
+        <strong>USDT on Ethereum (ERC-20):</strong> popular but expensive — gas fees can reach $5–$50 per
+        transfer depending on network congestion.
+      </li>
+      <li>
+        <strong>USDT on TRON (TRC-20):</strong> cheaper than Ethereum, but still has network fees and
+        requires a separate TRON wallet.
+      </li>
+      <li>
+        <strong>USDT on TON:</strong> near-zero fees (≈$0.01 on-chain), instant confirmation, and
+        zero-fee transfers between Telegram users via the @wallet bot. This is the default and recommended
+        network for all StarStore payouts.
+      </li>
+    </ul>
+
+    <h2>How StarStore uses USDT on TON</h2>
+    <p>
+      Every payout from <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a> — whether from
+      selling Stars or earning referral bonuses — is settled in <strong>USDT on the TON network</strong> by
+      default. Here's why that's the right choice:
+    </p>
+    <ul>
+      <li>
+        <strong>You keep more money.</strong> Near-zero gas fees mean almost nothing is eaten up in
+        transaction costs, especially important for smaller payouts like a 0.5 USDT referral bonus.
+      </li>
+      <li>
+        <strong>It's fast.</strong> TON confirmations happen in seconds. Your payout lands in your wallet
+        quickly after the 21-day Stars holding window closes.
+      </li>
+      <li>
+        <strong>No extra apps needed.</strong> Your TON wallet address works natively inside Telegram — you
+        don't need a separate browser wallet or extension.
+      </li>
+      <li>
+        <strong>Stable value.</strong> Because USDT is always $1, you know exactly what your Stars or
+        referral earnings are worth the moment they hit your wallet.
+      </li>
+    </ul>
+
+    <h2>How to receive USDT on TON — step by step</h2>
+    <ol>
+      <li>
+        Open the <strong>@wallet</strong> bot in Telegram (or use Tonkeeper, MyTonWallet, or any TON-compatible wallet).
+      </li>
+      <li>
+        Find your <strong>TON wallet address</strong> — it starts with <code>UQ...</code> or{" "}
+        <code>EQ...</code> and is a long string of letters and numbers.
+      </li>
+      <li>
+        Copy that address and paste it into the withdrawal field inside{" "}
+        <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a> when selling Stars or withdrawing referral
+        earnings.
+      </li>
+      <li>
+        After your payout is processed, open your wallet and look for the <strong>USDT</strong> token — it
+        will appear alongside your TON balance.
+      </li>
+    </ol>
+    <p>
+      <strong>Important:</strong> always double-check your wallet address before confirming. Crypto
+      transactions on the blockchain cannot be reversed.
+    </p>
+
+    <h2>Frequently asked questions</h2>
+
+    <h3>Is USDT on TON the same as regular USDT?</h3>
+    <p>
+      Yes — same value ($1), same issuer (Tether Limited), different blockchain. The TON version is simply
+      faster and cheaper to send than the Ethereum or TRON versions.
+    </p>
+
+    <h3>Do I need a special wallet?</h3>
+    <p>
+      Any TON-compatible wallet works: the built-in Telegram <strong>@wallet</strong> bot, Tonkeeper,
+      MyTonWallet, or any other wallet that supports TON tokens (jettons). No memo or tag is required.
+    </p>
+
+    <h3>Can I convert USDT on TON to regular dollars?</h3>
+    <p>
+      Yes. You can swap USDT for fiat currency on major crypto exchanges like Binance, OKX, Bybit, or
+      through peer-to-peer platforms. Because 1 USDT = $1, the conversion is straightforward.
+    </p>
+
+    <h3>Why does StarStore pay in USDT on TON and not TRC-20?</h3>
+    <p>
+      TON is StarStore's default because it has the lowest fees and integrates seamlessly with Telegram
+      wallets. TRC-20 USDT is supported but carries a network fee you pay yourself — it's only worth it if
+      you specifically need TRC-20.
+    </p>
+
+    <p>
+      Ready to receive USDT? Open{" "}
+      <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a>, launch the StarStore Mini App, and
+      start selling Stars or earning through the referral program. Your payouts land in USDT on TON — the
+      fastest, cheapest, and most Telegram-native way to hold real digital dollars. For full limits and
+      policies, see the{" "}
+      <a href="/blog/starstore-knowledge-base">StarStore Knowledge Base</a>.
+    </p>
+  </>
+);
+
 const EarnOnTelegram = () => (
   <>
     <p>
@@ -351,6 +538,7 @@ const StarsGuide = () => (
 );
 
 export const articles: Record<string, ComponentType> = {
+  "what-is-usdt-and-usdt-on-ton": UsdtAndUsdtOnTon,
   "how-to-earn-money-on-telegram": EarnOnTelegram,
   "sell-telegram-stars-for-ton": SellStarsToTon,
   "starstore-now-on-starstore-app": Announcement,
