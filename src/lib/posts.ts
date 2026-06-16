@@ -14,6 +14,17 @@ export const SITE_URL = "https://blog.starstore.app";
 
 export const posts: Post[] = [
   {
+    slug: "what-is-usdt-and-usdt-on-ton",
+    number: "07",
+    title: "What Is USDT — And What Is USDT on TON?",
+    seoTitle: "What Is USDT and What Is USDT on TON? A Complete Guide",
+    dek: "USDT is the world\'s most-used stablecoin, always worth $1. USDT on TON brings it inside Telegram — instant transfers, near-zero fees, and no bank in the middle. Here\'s everything you need to know.",
+    category: "Crypto Guides",
+    date: "June 16, 2026",
+    readTime: "7 min read",
+    hero: "/og/what-is-usdt-and-usdt-on-ton.jpg",
+  },
+  {
     slug: "how-to-earn-money-on-telegram",
     number: "06",
     title: "How to Earn Real Cash on Telegram: The StarStore Referral Program",
@@ -49,7 +60,7 @@ export const posts: Post[] = [
     slug: "how-to-cash-out-telegram-stars",
     number: "02",
     title: "How to Cash Out Telegram Stars for Real Money",
-    dek: "Telegram doesn't let you turn Stars into cash. We do. A step-by-step walkthrough of selling Stars for USDT on the TON network.",
+    dek: "Telegram doesn\'t let you turn Stars into cash. We do. A step-by-step walkthrough of selling Stars for USDT on the TON network.",
     category: "Selling Stars",
     date: "December 10, 2024",
     readTime: "5 min read",
