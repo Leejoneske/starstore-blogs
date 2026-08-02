@@ -14,6 +14,18 @@ export const SITE_URL = "https://blog.starstore.app";
 
 export const posts: Post[] = [
   {
+    slug: "starstore-referral-commission",
+    number: "08",
+    title: "StarStore Referral Program: Earn 30% Commission",
+    seoTitle: "StarStore Referral: Earn 30% Commission on Trades",
+    dek: "The new StarStore referral program pays 30% commission on every eligible trade your referrals make, up to $50 each. Here's how to get started in @TgStarStore_bot.",
+    category: "Earn Money",
+    date: "August 2, 2026",
+    readTime: "7 min read",
+    hero: "/og/starstore-referral-commission.jpg",
+  },
+  {
+
     slug: "what-is-usdt-and-usdt-on-ton",
     number: "07",
     title: "What Is USDT and What Is USDT on TON?",
@@ -29,12 +41,13 @@ export const posts: Post[] = [
     number: "06",
     title: "How to Earn Real Cash on Telegram: The StarStore Referral Program",
     seoTitle: "How to Earn Money on Telegram: StarStore Referral Program",
-    dek: "Earn money on Telegram with the StarStore referral program. Share your link via @TgStarStore_bot and get paid 0.5 USDT per active referral.",
+    dek: "Earn money on Telegram with the StarStore referral program. Share your link via @TgStarStore_bot and earn 30% commission on every eligible trade your referrals make.",
     category: "Earn Money",
     date: "June 10, 2026",
     readTime: "6 min read",
     hero: "/og/how-to-earn-on-telegram.jpg",
   },
+
   {
     slug: "sell-telegram-stars-for-ton",
     number: "05",
