@@ -131,8 +131,9 @@ const UsdtAndUsdtOnTon = () => (
     <ul>
       <li>
         <strong>You keep more of your earnings.</strong> Near-zero gas fees mean almost nothing is lost
-        to transaction costs, which is especially important for smaller payouts like a 0.5 USDT referral
-        bonus.
+        to transaction costs, which is especially important for smaller payouts like a 0.50 USDT referral
+        commission withdrawal.
+
       </li>
       <li>
         <strong>Fast delivery.</strong> TON confirmations happen in seconds. Your payout lands in your
@@ -213,65 +214,106 @@ const UsdtAndUsdtOnTon = () => (
   </>
 );
 
+const ReferralCommission = () => (
+  <>
+    <p>
+      The StarStore referral program has changed. Instead of a small one-off bonus per signup, you now
+      earn <strong>30% commission on every eligible trade</strong> the people you refer make: up to{" "}
+      <strong>$50 per referral</strong>. Your success is rewarded for as long as your referrals keep
+      trading, and everything is tracked inside{" "}
+      <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a>.
+    </p>
+
+    <h2>How the 30% commission works</h2>
+    <ul>
+      <li><strong>30% commission</strong> on every eligible trade your referral makes: buys and sells both count.</li>
+      <li><strong>Up to $50 per referral.</strong> Once one referral has earned you $50 in commission, that referral stops accruing.</li>
+      <li><strong>No cap on referrals.</strong> Invite as many people as you like: each one carries its own $50 ceiling.</li>
+      <li><strong>Paid in USDT</strong> and withdrawn to your TON wallet address.</li>
+    </ul>
+
+    <h2>How to get started</h2>
+    <ol>
+      <li>Open <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a> in Telegram and launch the StarStore Mini App.</li>
+      <li>Go to the <strong>Refer &amp; Earn</strong> page.</li>
+      <li>Copy your personal <strong>referral code</strong> or link, or share it straight to Telegram or WhatsApp with the built-in share buttons.</li>
+      <li>Your friends open StarStore through your link and start buying or selling Telegram Stars.</li>
+      <li>Commission accrues automatically. Watch <strong>Available to withdraw</strong>, <strong>Clearing</strong>, and <strong>Earned all time</strong> update on the same page.</li>
+      <li>When your available balance reaches <strong>0.50 USDT</strong>, tap <strong>Withdraw</strong>, paste your TON wallet address, and confirm.</li>
+    </ol>
+
+    <h2>Clearing, holds, and reversals</h2>
+    <p>
+      Commission from a <strong>buy</strong> order becomes available quickly. Commission from a{" "}
+      <strong>sell</strong> order is held for <strong>21 days</strong> before it can be withdrawn, because
+      Stars can be reclaimed within that window. If the underlying order is reversed, its commission is
+      cancelled. Anything still inside that window shows under <strong>Clearing</strong>.
+    </p>
+
+    <h2>Withdrawing your earnings</h2>
+    <ul>
+      <li>Minimum withdrawal: <strong>0.50 USDT</strong>.</li>
+      <li>Paid to a <strong>TON wallet address</strong> you provide: double-check it, crypto transfers can't be reversed.</li>
+      <li>Only cleared commission (the <em>Available to withdraw</em> figure) can be cashed out.</li>
+    </ul>
+
+    <h2>Tips to earn more</h2>
+    <ul>
+      <li>Share where Telegram Stars are already used: gaming groups, creator channels, and crypto communities.</li>
+      <li>Explain the benefit: your referrals can <a href="/blog/sell-telegram-stars-for-ton">sell Stars for TON</a> or <a href="/blog/how-to-cash-out-telegram-stars">cash out Stars for USDT</a> at good rates.</li>
+      <li>Because commission scales with trade volume, active traders are worth far more than one-time signups.</li>
+      <li>Only referrals that come through your link in <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a> are tracked.</li>
+    </ul>
+
+    <p>
+      Ready to start? Open{" "}
+      <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a>, launch the
+      Mini App, and open <strong>Refer &amp; Earn</strong> to copy your code. For full limits and policies,
+      see the <a href="/blog/starstore-knowledge-base">StarStore Knowledge Base</a>.
+    </p>
+  </>
+);
+
 const EarnOnTelegram = () => (
   <>
     <p>
       Looking for a <strong>Telegram side hustle that really pays</strong>? StarStore's referral program is
       one of the simplest ways to <strong>make real cash on Telegram</strong>: no inventory, no upfront
-      cost, and no waiting weeks for a payout. You share one link, your friends use the{" "}
+      cost. You share one link, your friends trade Telegram Stars in the{" "}
       <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a> Mini App,
-      and you <strong>earn StarStore</strong> rewards in real USDT.
+      and you <strong>earn StarStore</strong> commission in real USDT.
     </p>
 
-    <h2>What is the StarStore referral program?</h2>
+    <h2>What you earn</h2>
     <p>
-      The referral program pays you <strong>0.5 USDT</strong> for every person you invite who becomes an{" "}
-      <em>active</em> user. It's a genuine way to earn money on Telegram: you're rewarded in cryptocurrency
-      you can withdraw to your own wallet, not points or coupons. Everything is tracked automatically inside{" "}
-      <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a>.
+      You earn <strong>30% commission</strong> on every eligible trade made by someone who joined through
+      your link, <strong>up to $50 per referral</strong>. It's paid in USDT and withdrawn to your own TON
+      wallet: not points, not coupons. Full mechanics are in the{" "}
+      <a href="/blog/starstore-referral-commission">30% commission referral guide</a>.
     </p>
 
-    <h2>How to earn cash on Telegram: step by step</h2>
+    <h2>How to start earning: step by step</h2>
     <ol>
       <li>Open <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a> in Telegram and launch the StarStore Mini App.</li>
-      <li>Go to the <strong>Referrals</strong> section to grab your unique referral link.</li>
-      <li>Share your link with friends, in groups, channels, or on social media.</li>
-      <li>When someone joins through your link and becomes active, you instantly earn <strong>0.5 USDT</strong>.</li>
-      <li>Watch your referrals and earnings update in real time inside the Mini App.</li>
-      <li>Withdraw your balance to TON or TRC-20 USDT once you reach the <strong>0.5 USDT</strong> minimum.</li>
+      <li>Open <strong>Refer &amp; Earn</strong> and copy your referral code or link.</li>
+      <li>Share it with friends, in groups, channels, or on social media.</li>
+      <li>Every eligible trade they make credits you 30% commission.</li>
+      <li>Withdraw to your TON wallet from a <strong>0.50 USDT</strong> minimum.</li>
     </ol>
 
-    <h2>When does a referral count?</h2>
-    <p>
-      A referred user becomes <em>active</em>: and your bonus lands, the moment they do any one of the
-      following:
-    </p>
+    <h2>Why this one actually pays</h2>
     <ul>
-      <li>Buy at least <strong>200 Stars</strong> (cumulative across orders), <strong>or</strong></li>
-      <li>Sell at least <strong>200 Stars</strong>, <strong>or</strong></li>
-      <li>Buy any <strong>Telegram Premium</strong> plan.</li>
-    </ul>
-    <p>
-      Bonuses are credited <strong>instantly</strong> the moment the target is reached, including for sell
-      orders. You don't have to wait on any holding period to see your referral earnings.
-    </p>
-
-    <h2>Why this is a Telegram side hustle that actually pays</h2>
-    <ul>
-      <li><strong>Real money:</strong> you're paid in USDT, not in-app credit you can't cash out.</li>
-      <li><strong>Zero cost:</strong> getting your link and sharing it is completely free.</li>
-      <li><strong>Instant rewards:</strong> bonuses hit your balance the second a referral becomes active.</li>
-      <li><strong>Low withdrawal threshold:</strong> cash out from just <strong>0.5 USDT</strong>.</li>
-      <li><strong>Scales with you:</strong> the more active users you bring in, the more you earn.</li>
+      <li><strong>Real money:</strong> USDT you can withdraw, not in-app credit.</li>
+      <li><strong>Zero cost:</strong> getting and sharing your link is free.</li>
+      <li><strong>Recurring:</strong> you keep earning as your referrals keep trading, up to $50 each.</li>
+      <li><strong>Low threshold:</strong> withdraw from just 0.50 USDT.</li>
     </ul>
 
-    <h2>Tips to maximize your StarStore earnings</h2>
-    <ul>
-      <li>Share where people already use Telegram Stars: gaming groups, creator channels, and crypto communities convert best.</li>
-      <li>Explain the value: people can <a href="/blog/how-to-cash-out-telegram-stars">cash out Telegram Stars</a> and buy Stars or Premium at great rates.</li>
-      <li>Pin your link in groups you run and add it to your bio.</li>
-      <li>Only referrals that come through <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a> with your link are tracked; off-bot shares don't count.</li>
-    </ul>
+    <p>
+      One thing to know: commission from a sell order clears after <strong>21 days</strong> (Stars can be
+      reclaimed in that window), and commission on a reversed order is cancelled. Buy-order commission
+      clears much faster.
+    </p>
 
     <p>
       Ready to start earning? Open{" "}
@@ -281,6 +323,7 @@ const EarnOnTelegram = () => (
     </p>
   </>
 );
+
 
 
 const SellStarsToTon = () => (
@@ -368,24 +411,24 @@ const Announcement = () => (
     <h2>Why .app?</h2>
     <p>
       The <code>.app</code> top-level domain is HTTPS-only at the registry level, which means every visit
-      is encrypted by default. For a platform that handles Telegram Stars, USDT withdrawals, and ambassador
-      payouts, that baseline of trust matters. It also makes our identity unambiguous: StarStore is an
-      application you use, not a directory you read.
+      is encrypted by default. For a platform that handles Telegram Stars, USDT withdrawals, and referral
+      commission payouts, that baseline of trust matters. It also makes our identity unambiguous: StarStore
+      is an application you use, not a directory you read.
     </p>
 
     <h2>What changes for you</h2>
     <ul>
       <li><strong>New URL:</strong> bookmark <a href="https://starstore.app">starstore.app</a>. Old <code>starstore.site</code> links will be redirected during the transition window.</li>
       <li><strong>Same Telegram bot:</strong> <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a> is unchanged. Open the Mini App from the bot exactly as before.</li>
-      <li><strong>Same accounts and balances:</strong> your history, referrals, ambassador status, and pending payouts carry over. Nothing to re-register.</li>
+      <li><strong>Same accounts and balances:</strong> your history, referrals, and pending payouts carry over. Nothing to re-register.</li>
     </ul>
 
     <h2>What stays the same</h2>
     <p>
-      Our pricing, the 21-day holding window for Stars sales, the 0.5 USDT minimum referral payout, and
-      the ambassador monthly auto-withdraw on day 1 are all unchanged. The only thing different is the
-      address bar.
+      Our pricing, the 21-day holding window for Stars sales, and the 0.50 USDT minimum referral withdrawal
+      are all unchanged. The only thing different is the address bar.
     </p>
+
 
     <h3>Action recommended</h3>
     <p>
@@ -496,23 +539,23 @@ const KnowledgeBase = () => (
 
     <h2>Referral program</h2>
     <p>
-      Open <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a> to get your referral link and track
-      invited users in real time.
+      Open <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a> and go to{" "}
+      <strong>Refer &amp; Earn</strong> to get your referral code and track invited users in real time.
     </p>
-    <p>Earn 0.5 USDT for every referred user who becomes <em>active</em>. A referral becomes active when they:</p>
+    <p>
+      You earn <strong>30% commission</strong> on every eligible trade your referrals make, up to{" "}
+      <strong>$50 per referral</strong>. Commission stops accruing for a referral once it has earned you $50.
+    </p>
     <ul>
-      <li>Buy at least 200 Stars (cumulative across orders), <strong>or</strong></li>
-      <li>Sell at least 200 Stars, <strong>or</strong></li>
-      <li>Buy any Telegram Premium plan.</li>
+      <li>Commission from a sell order is held for 21 days before it can be withdrawn, since Stars can be reclaimed in that window.</li>
+      <li>If an order is reversed, its commission is cancelled.</li>
+      <li>Minimum withdrawal: 0.50 USDT, paid to your TON wallet address.</li>
+      <li>Referrals must come through your link in <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a>; off-bot transactions are not tracked.</li>
     </ul>
     <p>
-      Referral bonuses are credited <strong>instantly</strong> the moment the target is reached, including
-      for sell orders. There's no waiting on the 21-day hold to see your bonus anymore.
+      Full walkthrough: <a href="/blog/starstore-referral-commission">StarStore Referral Program: Earn 30% Commission</a>.
     </p>
-    <p>
-      Referrals must come through <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer">@TgStarStore_bot</a> with your
-      link; off-bot transactions are not tracked. Minimum withdrawal is 0.5 USDT to TON or TRC-20 USDT.
-    </p>
+
 
     <h2>Refund policy</h2>
     <p>
@@ -559,12 +602,13 @@ const StarsGuide = () => (
       <li>Competitive, transparent pricing.</li>
       <li>Instant delivery on buys.</li>
       <li>Secure TON-network settlement on sells.</li>
-      <li>A referral program that pays in real USDT.</li>
+      <li>A referral program paying 30% commission in real USDT.</li>
     </ul>
   </>
 );
 
 export const articles: Record<string, ComponentType> = {
+  "starstore-referral-commission": ReferralCommission,
   "what-is-usdt-and-usdt-on-ton": UsdtAndUsdtOnTon,
   "how-to-earn-money-on-telegram": EarnOnTelegram,
   "sell-telegram-stars-for-ton": SellStarsToTon,
@@ -573,3 +617,4 @@ export const articles: Record<string, ComponentType> = {
   "starstore-knowledge-base": KnowledgeBase,
   "telegram-stars-complete-guide": StarsGuide,
 };
+
