@@ -121,7 +121,10 @@ export const Route = createFileRoute("/blog/$slug")({
             "StarStore",
             "StarStore blog",
             "StarStore news",
-            "StarStore Ambassadors",
+            "StarStore referral commission",
+            "30% commission Telegram",
+            "refer and earn Telegram",
+
             "Telegram Stars",
             "buy Telegram Stars",
             "sell Telegram Stars",

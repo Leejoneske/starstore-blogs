@@ -131,8 +131,9 @@ const UsdtAndUsdtOnTon = () => (
     <ul>
       <li>
         <strong>You keep more of your earnings.</strong> Near-zero gas fees mean almost nothing is lost
-        to transaction costs, which is especially important for smaller payouts like a 0.5 USDT referral
-        bonus.
+        to transaction costs, which is especially important for smaller payouts like a 0.50 USDT referral
+        commission withdrawal.
+
       </li>
       <li>
         <strong>Fast delivery.</strong> TON confirmations happen in seconds. Your payout lands in your
