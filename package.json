@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite dev",
     "prebuild": "npx tsx scripts/generate-sitemap.ts",
-    "build": "vite build",
+    "build": "vite build && npx tsx scripts/static-host-postbuild.ts",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
