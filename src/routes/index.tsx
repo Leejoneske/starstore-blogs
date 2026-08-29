@@ -4,7 +4,6 @@ import { FaTelegram } from "react-icons/fa6";
 import { posts } from "@/lib/posts";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { SubscribeForm } from "@/components/SubscribeForm";
 import { useState } from "react";
 import logo from "@/assets/logo.png";
 
