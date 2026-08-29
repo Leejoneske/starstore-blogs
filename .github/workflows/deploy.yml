@@ -10,9 +10,11 @@ permissions:
   pages: write
   id-token: write
 
+# Let Pages deployments queue instead of cancelling. Cancelling an in-flight
+# deploy leaves the previous (older) build live, which is worse than waiting.
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
