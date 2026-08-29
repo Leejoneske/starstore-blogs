@@ -12,7 +12,12 @@ export default defineConfig({
     // tanstackStart already runs router generation + auto code-splitting.
     // Do NOT also add TanStackRouterVite — it double-transforms route files
     // and produces a "Duplicate declaration hot" compile error.
-    tanstackStart(),
+    // Prerender every route to static HTML so the site can be served from any
+    // static host (GitHub Pages) with real crawlable markup per URL.
+    tanstackStart({
+      prerender: { enabled: true, crawlLinks: true, autoSubfolderIndex: true },
+    }),
+
     // viteReact must follow tanstackStart so the automatic JSX runtime is
     // applied to the generated client entry (otherwise: "React is not defined").
     viteReact(),
