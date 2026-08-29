@@ -180,11 +180,9 @@ function Index() {
               Stay in the loop.
             </h2>
             <p className="mt-4 text-muted-foreground max-w-md mx-auto">
-              Get new posts in your inbox — no spam, unsubscribe anytime.
+              Follow new posts via RSS, or join us on Telegram for updates.
             </p>
-            <div className="mt-8">
-              <SubscribeForm source="homepage" />
-            </div>
+
             <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 max-w-md mx-auto">
               <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer"
                  className="btn-press inline-flex items-center justify-center gap-2 bg-ink text-paper px-6 py-3 rounded-full font-medium hover:bg-gold hover:text-ink w-full sm:w-auto">
