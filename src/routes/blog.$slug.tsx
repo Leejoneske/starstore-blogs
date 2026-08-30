@@ -1,6 +1,6 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { ArticleLayout } from "@/components/ArticleLayout";
-import { getPost, SITE_URL } from "@/lib/posts";
+import { getPost, SITE_URL, APP_URL, AMBASSADOR_URL, BOT_URL, toRfc3339 } from "@/lib/posts";
 import { articles } from "@/lib/articles";
 
 export const Route = createFileRoute("/blog/$slug")({
@@ -22,15 +22,18 @@ export const Route = createFileRoute("/blog/$slug")({
       description: post.dek,
       mainEntityOfPage: { "@type": "WebPage", "@id": url },
       url,
-      datePublished: post.date,
-      dateModified: post.date,
+      datePublished: toRfc3339(post.date),
+      dateModified: toRfc3339(post.updated ?? post.date),
       articleSection: post.category,
-      author: { "@type": "Organization", name: "StarStore", url: "https://starstore.app" },
+      inLanguage: "en",
+      isPartOf: { "@type": "Blog", "@id": `${SITE_URL}/#blog` },
+      author: { "@type": "Organization", name: "StarStore", url: APP_URL },
       publisher: {
         "@type": "Organization",
         name: "StarStore",
-        url: "https://starstore.app",
+        url: APP_URL,
         logo: { "@type": "ImageObject", url: `${SITE_URL}/favicon.png` },
+        sameAs: [APP_URL, AMBASSADOR_URL, BOT_URL],
       },
       ...(ogImage ? { image: [ogImage] } : {}),
     };
@@ -47,48 +50,132 @@ export const Route = createFileRoute("/blog/$slug")({
 
     const faqByPost: Record<string, { q: string; a: string }[]> = {
       "what-is-usdt-and-usdt-on-ton": [
-        { q: "What is USDT?", a: "USDT (Tether USD) is a stablecoin: a type of cryptocurrency whose value is pegged to the US dollar and designed to stay stable. It is backed by Tether's reserves and is the most widely used stablecoin in the world by trading volume. StarStore uses USDT to pay out sellers and referral earners." },
-        { q: "What is USDT on TON?", a: "USDT on TON is a native deployment of Tether's USDT stablecoin on The Open Network (TON) blockchain: the blockchain integrated into Telegram. Launched in April 2024, it lets Telegram users send USDT instantly and for free to any Telegram contact via the @wallet bot." },
-        { q: "How is USDT on TON different from TRC-20 USDT?", a: "Both are always worth $1, but USDT on TON has near-zero gas fees (around $0.01 on-chain), instant confirmations, and free transfers between Telegram users via the @wallet bot. TRC-20 USDT has higher fees and requires a separate TRON wallet." },
-        { q: "Why does StarStore pay in USDT on TON?", a: "TON is StarStore's default payout network because it has the lowest fees, instant settlement, and integrates natively with Telegram wallets. This means more of your earnings reach your wallet without being eaten up by transaction costs." },
+        {
+          q: "What is USDT?",
+          a: "USDT (Tether USD) is a stablecoin: a type of cryptocurrency whose value is pegged to the US dollar and designed to stay stable. It is backed by Tether's reserves and is the most widely used stablecoin in the world by trading volume. StarStore uses USDT to pay out sellers and referral earners.",
+        },
+        {
+          q: "What is USDT on TON?",
+          a: "USDT on TON is a native deployment of Tether's USDT stablecoin on The Open Network (TON) blockchain: the blockchain integrated into Telegram. Launched in April 2024, it lets Telegram users send USDT instantly and for free to any Telegram contact via the @wallet bot.",
+        },
+        {
+          q: "How is USDT on TON different from TRC-20 USDT?",
+          a: "Both are always worth $1, but USDT on TON has near-zero gas fees (around $0.01 on-chain), instant confirmations, and free transfers between Telegram users via the @wallet bot. TRC-20 USDT has higher fees and requires a separate TRON wallet.",
+        },
+        {
+          q: "Why does StarStore pay in USDT on TON?",
+          a: "TON is StarStore's default payout network because it has the lowest fees, instant settlement, and integrates natively with Telegram wallets. This means more of your earnings reach your wallet without being eaten up by transaction costs.",
+        },
       ],
       "starstore-referral-commission": [
-        { q: "How does the new StarStore referral program work?", a: "You earn 30% commission on every eligible trade made by users who join StarStore through your referral link, up to $50 per referral. Get your code from the Refer & Earn page in the @TgStarStore_bot Mini App." },
-        { q: "How much can I earn per referral?", a: "Up to $50 in commission per referral. Once a referral has earned you $50, that referral stops accruing commission, but there is no limit on how many people you can refer." },
-        { q: "How do I get started with the StarStore referral program?", a: "Open @TgStarStore_bot in Telegram, launch the StarStore Mini App, open Refer & Earn, and copy or share your referral code or link. Commission accrues automatically as your referrals trade." },
-        { q: "When can I withdraw my referral commission?", a: "Commission from buy orders clears quickly; commission from sell orders is held for 21 days because Stars can be reclaimed in that window. Once your available balance reaches 0.50 USDT you can withdraw to your TON wallet address." },
-        { q: "What happens if a referred order is reversed?", a: "If the underlying order is reversed, the commission earned from it is cancelled. Commission still inside the clearing window shows as Clearing in the Refer & Earn page." },
+        {
+          q: "How does the new StarStore referral program work?",
+          a: "You earn 30% commission on every eligible trade made by users who join StarStore through your referral link, up to $50 per referral. Get your code from the Refer & Earn page in the @TgStarStore_bot Mini App.",
+        },
+        {
+          q: "How much can I earn per referral?",
+          a: "Up to $50 in commission per referral. Once a referral has earned you $50, that referral stops accruing commission, but there is no limit on how many people you can refer.",
+        },
+        {
+          q: "How do I get started with the StarStore referral program?",
+          a: "Open @TgStarStore_bot in Telegram, launch the StarStore Mini App, open Refer & Earn, and copy or share your referral code or link. Commission accrues automatically as your referrals trade.",
+        },
+        {
+          q: "When can I withdraw my referral commission?",
+          a: "Commission from buy orders clears quickly; commission from sell orders is held for 21 days because Stars can be reclaimed in that window. Once your available balance reaches 0.50 USDT you can withdraw to your TON wallet address.",
+        },
+        {
+          q: "What happens if a referred order is reversed?",
+          a: "If the underlying order is reversed, the commission earned from it is cancelled. Commission still inside the clearing window shows as Clearing in the Refer & Earn page.",
+        },
       ],
       "how-to-earn-money-on-telegram": [
-        { q: "How can I earn real cash on Telegram?", a: "Join the StarStore referral program inside @TgStarStore_bot. Copy your link from the Refer & Earn page, share it, and earn 30% commission on every eligible trade your referrals make, up to $50 per referral, paid in USDT to your TON wallet." },
-        { q: "How much does the StarStore referral program pay?", a: "30% commission on every eligible trade made by a referred user, capped at $50 per referral. Buy-order commission clears quickly; sell-order commission clears after 21 days." },
-        { q: "Is the StarStore referral program a real Telegram side hustle?", a: "Yes. It pays in USDT (real cryptocurrency), it's free to join, and you keep earning as your referrals keep trading. Withdrawals start from 0.50 USDT to a TON wallet." },
-        { q: "Where do I get my StarStore referral link?", a: "Open @TgStarStore_bot in Telegram, launch the StarStore Mini App, and open the Refer & Earn page to copy your unique code or link and track earnings in real time." },
+        {
+          q: "How can I earn real cash on Telegram?",
+          a: "Join the StarStore referral program inside @TgStarStore_bot. Copy your link from the Refer & Earn page, share it, and earn 30% commission on every eligible trade your referrals make, up to $50 per referral, paid in USDT to your TON wallet.",
+        },
+        {
+          q: "How much does the StarStore referral program pay?",
+          a: "30% commission on every eligible trade made by a referred user, capped at $50 per referral. Buy-order commission clears quickly; sell-order commission clears after 21 days.",
+        },
+        {
+          q: "Is the StarStore referral program a real Telegram side hustle?",
+          a: "Yes. It pays in USDT (real cryptocurrency), it's free to join, and you keep earning as your referrals keep trading. Withdrawals start from 0.50 USDT to a TON wallet.",
+        },
+        {
+          q: "Where do I get my StarStore referral link?",
+          a: "Open @TgStarStore_bot in Telegram, launch the StarStore Mini App, and open the Refer & Earn page to copy your unique code or link and track earnings in real time.",
+        },
       ],
 
       "sell-telegram-stars-for-ton": [
-        { q: "How do I sell Telegram Stars for TON?", a: "Open @TgStarStore_bot in Telegram and launch the StarStore Mini App, go to the Sell page, enter the number of Stars (50 minimum, 80,000 maximum), paste your TON-network wallet address, and confirm. After the 21-day holding window, your payout is sent on the TON network." },
-        { q: "Can I convert Telegram Stars to TON or USDT?", a: "Yes. In the @TgStarStore_bot Mini App you can convert Stars to USDT on the TON network (the default and cheapest option), to native TON, or to TRC-20 USDT. Live rates are shown before you confirm." },
-        { q: "Where do I sell my Telegram Stars?", a: "Selling happens only inside the @TgStarStore_bot Telegram Mini App: there is no website form. Open the bot in Telegram, launch the Mini App, and use the Sell page." },
-        { q: "How long does it take to withdraw Stars to my wallet?", a: "Stars enter a 21-day holding window that protects against payment chargebacks. After the window clears, your TON or USDT payout is sent to the wallet address you provided." },
+        {
+          q: "How do I sell Telegram Stars for TON?",
+          a: "Open @TgStarStore_bot in Telegram and launch the StarStore Mini App, go to the Sell page, enter the number of Stars (50 minimum, 80,000 maximum), paste your TON-network wallet address, and confirm. After the 21-day holding window, your payout is sent on the TON network.",
+        },
+        {
+          q: "Can I convert Telegram Stars to TON or USDT?",
+          a: "Yes. In the @TgStarStore_bot Mini App you can convert Stars to USDT on the TON network (the default and cheapest option), to native TON, or to TRC-20 USDT. Live rates are shown before you confirm.",
+        },
+        {
+          q: "Where do I sell my Telegram Stars?",
+          a: "Selling happens only inside the @TgStarStore_bot Telegram Mini App: there is no website form. Open the bot in Telegram, launch the Mini App, and use the Sell page.",
+        },
+        {
+          q: "How long does it take to withdraw Stars to my wallet?",
+          a: "Stars enter a 21-day holding window that protects against payment chargebacks. After the window clears, your TON or USDT payout is sent to the wallet address you provided.",
+        },
       ],
       "how-to-cash-out-telegram-stars": [
-        { q: "How do I cash out Telegram Stars?", a: "Open @TgStarStore_bot in Telegram, launch the Mini App, go to Sell, enter the amount of Stars (50 minimum, 80,000 maximum), paste your USDT TON-network wallet address, and confirm. After the 21-day holding window, USDT is sent to your wallet." },
-        { q: "Why is there a 21-day hold on selling Stars?", a: "Stars are purchased through third-party payment rails that can be reversed by banks or providers days or weeks later. The 21-day window mirrors Telegram's own Stars-revenue window and protects against chargebacks, which keeps payouts reliable and our fees low." },
-        { q: "Can I receive USDT on TRC-20 instead of TON?", a: "Yes, but you'll need to cover the network transaction cost yourself, which usually eats into a small payout. The default and cheapest path is USDT on the TON network." },
-        { q: "What happens if I send the wrong wallet address?", a: "Crypto transactions cannot be reversed. Always paste and verify your wallet address before confirming the order." },
+        {
+          q: "How do I cash out Telegram Stars?",
+          a: "Open @TgStarStore_bot in Telegram, launch the Mini App, go to Sell, enter the amount of Stars (50 minimum, 80,000 maximum), paste your USDT TON-network wallet address, and confirm. After the 21-day holding window, USDT is sent to your wallet.",
+        },
+        {
+          q: "Why is there a 21-day hold on selling Stars?",
+          a: "Stars are purchased through third-party payment rails that can be reversed by banks or providers days or weeks later. The 21-day window mirrors Telegram's own Stars-revenue window and protects against chargebacks, which keeps payouts reliable and our fees low.",
+        },
+        {
+          q: "Can I receive USDT on TRC-20 instead of TON?",
+          a: "Yes, but you'll need to cover the network transaction cost yourself, which usually eats into a small payout. The default and cheapest path is USDT on the TON network.",
+        },
+        {
+          q: "What happens if I send the wrong wallet address?",
+          a: "Crypto transactions cannot be reversed. Always paste and verify your wallet address before confirming the order.",
+        },
       ],
       "starstore-knowledge-base": [
-        { q: "What is the minimum and maximum order for buying Stars?", a: "You can buy from 15 Stars up to 1,000,000 Stars per order. Orders under 50 Stars are account-based and can only be delivered to your own Telegram account; orders of 50 Stars and above can be sent to any Telegram username as a gift." },
-        { q: "How does the StarStore referral program work?", a: "You earn 30% commission on every eligible trade made by users who join through your referral link, up to $50 per referral. Sell-order commission clears after 21 days; reversed orders cancel their commission." },
-        { q: "What is the minimum referral withdrawal?", a: "0.50 USDT, paid out to your TON wallet address." },
+        {
+          q: "What is the minimum and maximum order for buying Stars?",
+          a: "You can buy from 15 Stars up to 1,000,000 Stars per order. Orders under 50 Stars are account-based and can only be delivered to your own Telegram account; orders of 50 Stars and above can be sent to any Telegram username as a gift.",
+        },
+        {
+          q: "How does the StarStore referral program work?",
+          a: "You earn 30% commission on every eligible trade made by users who join through your referral link, up to $50 per referral. Sell-order commission clears after 21 days; reversed orders cancel their commission.",
+        },
+        {
+          q: "What is the minimum referral withdrawal?",
+          a: "0.50 USDT, paid out to your TON wallet address.",
+        },
 
-        { q: "What is StarStore's refund policy?", a: "Refunds are issued for overcharges, internal server errors, or technical issues on our side. They are not available for Telegram API issues, unrelated external problems, or change of mind. Send /paysupport in the bot to request one. Limit: one refund request per user per month." },
+        {
+          q: "What is StarStore's refund policy?",
+          a: "Refunds are issued for overcharges, internal server errors, or technical issues on our side. They are not available for Telegram API issues, unrelated external problems, or change of mind. Send /paysupport in the bot to request one. Limit: one refund request per user per month.",
+        },
       ],
       "telegram-stars-complete-guide": [
-        { q: "What are Telegram Stars?", a: "Telegram Stars are Telegram's in-platform digital currency, used to pay for digital goods and services across bots, channels, and Mini Apps." },
-        { q: "How do I buy Telegram Stars?", a: "Open the StarStore Mini App via @TgStarStore_bot, pick a Stars package, pay in TON or USDT, and the Stars arrive in your Telegram account instantly." },
-        { q: "Can I convert Telegram Stars to real money?", a: "Yes: through StarStore. You can sell earned Stars and receive USDT on the TON network after a 21-day holding window." },
+        {
+          q: "What are Telegram Stars?",
+          a: "Telegram Stars are Telegram's in-platform digital currency, used to pay for digital goods and services across bots, channels, and Mini Apps.",
+        },
+        {
+          q: "How do I buy Telegram Stars?",
+          a: "Open the StarStore Mini App via @TgStarStore_bot, pick a Stars package, pay in TON or USDT, and the Stars arrive in your Telegram account instantly.",
+        },
+        {
+          q: "Can I convert Telegram Stars to real money?",
+          a: "Yes: through StarStore. You can sell earned Stars and receive USDT on the TON network after a 21-day holding window.",
+        },
       ],
     };
     const faq = faqByPost[post.slug];
@@ -112,65 +199,8 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:url", content: url },
         { property: "og:site_name", content: "StarStore Insights" },
         { property: "article:section", content: post.category },
-        { property: "article:published_time", content: post.date },
-        {
-          name: "keywords",
-          content: [
-            post.title,
-            post.category,
-            "StarStore",
-            "StarStore blog",
-            "StarStore news",
-            "StarStore referral commission",
-            "30% commission Telegram",
-            "refer and earn Telegram",
-
-            "Telegram Stars",
-            "buy Telegram Stars",
-            "sell Telegram Stars",
-            "Telegram Stars to USDT",
-            "Telegram Stars to TON",
-            "stars to TON",
-            "stars to USDT",
-            "convert Telegram Stars",
-            "convert stars to USDT",
-            "how to cash out Telegram Stars",
-            "how to withdraw Telegram Stars",
-            "Telegram Stars withdrawal",
-            "Telegram Premium",
-            "Telegram Mini App",
-            "earn money on Telegram",
-            "how to earn on Telegram",
-            "make real cash on Telegram",
-            "Telegram side hustle that really pays",
-            "earn StarStore",
-            "StarStore referral program",
-            "Telegram referral program",
-            "earn USDT on Telegram",
-            "make money online with Telegram",
-            "Telegram money making app",
-            "TgStarStore_bot",
-            "what is USDT",
-            "what is USDT on TON",
-            "USDT on TON explained",
-            "USDT stablecoin",
-            "USDt TON",
-            "TON blockchain",
-            "Tether USDT",
-            "TON wallet",
-            "cash out Telegram Stars",
-            "withdraw Telegram Stars",
-            "Telegram Stars to USDT",
-            "Telegram Stars to TON",
-            "sell Telegram Stars",
-            "StarStore referral program",
-            "earn USDT Telegram",
-            "Telegram Stars guide",
-            "StarStore knowledge base",
-            "starstore.app",
-            "starstore.app",
-          ].join(", "),
-        },
+        { property: "article:published_time", content: toRfc3339(post.date) },
+        { property: "article:modified_time", content: toRfc3339(post.updated ?? post.date) },
         ...(ogImage
           ? [
               { property: "og:image", content: ogImage },
@@ -184,12 +214,9 @@ export const Route = createFileRoute("/blog/$slug")({
             ]
           : []),
       ],
-      links: [
-        { rel: "canonical", href: url },
-        ...(post.hero
-          ? [{ rel: "preload", as: "image", href: post.hero, fetchpriority: "high" } as const]
-          : []),
-      ],
+      // The hero preload comes from React 19's fetchPriority="high" handling,
+      // which emits imageSizes to match the <img>; adding one here duplicated it.
+      links: [{ rel: "canonical", href: url }],
       scripts: [
         { type: "application/ld+json", children: JSON.stringify(articleSchema) },
         { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
@@ -205,7 +232,9 @@ export const Route = createFileRoute("/blog/$slug")({
       <div className="text-center">
         <div className="font-display text-6xl text-gold">404</div>
         <p className="mt-2 text-muted-foreground">Article not found</p>
-        <a href="/" className="mt-4 inline-block underline">Back to issue</a>
+        <a href="/" className="mt-4 inline-block underline">
+          Back to issue
+        </a>
       </div>
     </div>
   ),
@@ -220,4 +249,3 @@ function ArticlePage() {
     </ArticleLayout>
   );
 }
-

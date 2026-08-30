@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Star, ArrowUpRight } from "lucide-react";
 import type { Post } from "@/lib/posts";
-import { getAdjacentPosts, posts } from "@/lib/posts";
+import { getAdjacentPosts, posts, formatDate, APP_URL, AMBASSADOR_URL, BOT_URL } from "@/lib/posts";
 import { SiteHeader } from "./SiteHeader";
 import { SiteFooter } from "./SiteFooter";
 
@@ -16,13 +16,17 @@ export function ArticleLayout({ post, children }: { post: Post; children: React.
         {/* Masthead */}
         <div className="border-b border-rule">
           <div className="max-w-3xl mx-auto px-6 py-12">
-            <Link to="/" className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground hover:text-gold inline-flex items-center gap-1">
+            <Link
+              to="/"
+              className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground hover:text-gold inline-flex items-center gap-1"
+            >
               ← Back to issue
             </Link>
 
             <div className="mt-8 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
               <span className="text-gold flex items-center gap-1">
-                <Star className="w-3 h-3 fill-gold" /> Article {post.number} / {String(posts.length).padStart(2, "0")}
+                <Star className="w-3 h-3 fill-gold" /> Article {post.number} /{" "}
+                {String(posts.length).padStart(2, "0")}
               </span>
               <span>·</span>
               <span>{post.category}</span>
@@ -37,7 +41,7 @@ export function ArticleLayout({ post, children }: { post: Post; children: React.
             </p>
 
             <div className="mt-8 flex items-center justify-between font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
-              <span>{post.date}</span>
+              <time dateTime={post.date}>{formatDate(post.date)}</time>
               <span>{post.readTime}</span>
             </div>
           </div>
@@ -56,6 +60,7 @@ export function ArticleLayout({ post, children }: { post: Post; children: React.
                   loading="eager"
                   fetchPriority="high"
                   decoding="async"
+                  sizes="(min-width: 1024px) 64rem, 100vw"
                   className="w-full h-auto block"
                 />
               </figure>
@@ -64,34 +69,49 @@ export function ArticleLayout({ post, children }: { post: Post; children: React.
         )}
 
         {/* Body */}
-        <article className="max-w-3xl mx-auto px-6 py-16 prose-editorial">
-          {children}
-        </article>
+        <article className="max-w-3xl mx-auto px-6 py-16 prose-editorial">{children}</article>
 
         {/* Pager */}
         <div className="max-w-3xl mx-auto px-6 pb-16">
           <div className="double-rule pt-8 grid grid-cols-2 gap-6">
             {prev ? (
               <Link to="/blog/$slug" params={{ slug: prev.slug }} className="group">
-                <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-2">← Previous</div>
-                <div className="font-display text-lg font-semibold leading-tight group-hover:text-gold transition-colors">{prev.title}</div>
+                <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-2">
+                  ← Previous
+                </div>
+                <div className="font-display text-lg font-semibold leading-tight group-hover:text-gold transition-colors">
+                  {prev.title}
+                </div>
               </Link>
-            ) : <div />}
+            ) : (
+              <div />
+            )}
             {next ? (
               <Link to="/blog/$slug" params={{ slug: next.slug }} className="group text-right">
-                <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-2">Next →</div>
-                <div className="font-display text-lg font-semibold leading-tight group-hover:text-gold transition-colors">{next.title}</div>
+                <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-2">
+                  Next →
+                </div>
+                <div className="font-display text-lg font-semibold leading-tight group-hover:text-gold transition-colors">
+                  {next.title}
+                </div>
               </Link>
-            ) : <div />}
+            ) : (
+              <div />
+            )}
           </div>
         </div>
 
         {/* CTA */}
         <div className="max-w-3xl mx-auto px-6 pb-16">
-          <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer"
-             className="btn-press block bg-ink text-paper p-8 rounded-lg group hover:bg-gold hover:text-ink">
-
-            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-gold group-hover:text-ink/60 mb-2">Try it</div>
+          <a
+            href={BOT_URL}
+            target="_blank"
+            rel="noopener"
+            className="btn-press block bg-ink text-paper p-8 rounded-lg group hover:bg-gold hover:text-ink"
+          >
+            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-gold group-hover:text-ink/60 mb-2">
+              Try it
+            </div>
             <div className="flex items-end justify-between gap-4">
               <div className="font-display text-2xl md:text-3xl font-semibold leading-tight">
                 Open StarStore in Telegram
@@ -99,6 +119,41 @@ export function ArticleLayout({ post, children }: { post: Post; children: React.
               <ArrowUpRight className="w-8 h-8 shrink-0 group-hover:rotate-45 transition-transform" />
             </div>
           </a>
+
+          <div className="mt-4 grid sm:grid-cols-2 gap-4">
+            <a
+              href={APP_URL}
+              target="_blank"
+              rel="noopener"
+              className="btn-press block border border-rule rounded-lg p-5 hover:border-gold group"
+            >
+              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-1">
+                Main site
+              </div>
+              <div className="font-display text-lg font-semibold group-hover:text-gold transition-colors">
+                starstore.app ↗
+              </div>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Buy and sell Telegram Stars and Premium.
+              </p>
+            </a>
+            <a
+              href={AMBASSADOR_URL}
+              target="_blank"
+              rel="noopener"
+              className="btn-press block border border-rule rounded-lg p-5 hover:border-gold group"
+            >
+              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-1">
+                Ambassadors
+              </div>
+              <div className="font-display text-lg font-semibold group-hover:text-gold transition-colors">
+                amb.starstore.app ↗
+              </div>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Earn commission by growing StarStore.
+              </p>
+            </a>
+          </div>
         </div>
       </main>
 

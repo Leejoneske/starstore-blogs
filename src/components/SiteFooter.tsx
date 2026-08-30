@@ -1,20 +1,21 @@
 import { FaTelegram } from "react-icons/fa6";
 import { Mail, MessageCircle } from "lucide-react";
 import logo from "@/assets/logo.png";
+import { APP_URL, AMBASSADOR_URL, BOT_URL, SITE_URL, SUPPORT_EMAIL } from "@/lib/posts";
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-rule mt-32 bg-ink text-paper">
       <div className="max-w-6xl mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-3 gap-12">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <div className="flex items-center gap-3 mb-4">
               <img src={logo} alt="" className="w-9 h-9 rounded-full bg-paper" />
               <span className="font-display text-xl font-semibold">Insights</span>
             </div>
             <p className="text-sm text-paper/60 leading-relaxed max-w-xs">
-              The editorial home of the journal — guides, updates, and field notes on Telegram Stars,
-              referrals, and crypto payouts.
+              The editorial home of the journal — guides, updates, and field notes on Telegram
+              Stars, referrals, and crypto payouts.
             </p>
           </div>
 
@@ -23,9 +24,44 @@ export function SiteFooter() {
               Read
             </div>
             <ul className="space-y-2 text-sm">
-              <li><a href="/" className="hover:text-gold">Latest Issue</a></li>
-              <li><a href="https://blog.starstore.app/rss.xml" className="hover:text-gold">RSS Feed</a></li>
-              <li><a href="https://blog.starstore.app/atom.xml" className="hover:text-gold">Atom Feed</a></li>
+              <li>
+                <a href="/" className="hover:text-gold">
+                  Latest Issue
+                </a>
+              </li>
+              <li>
+                <a href={`${SITE_URL}/rss.xml`} className="hover:text-gold">
+                  RSS Feed
+                </a>
+              </li>
+              <li>
+                <a href={`${SITE_URL}/atom.xml`} className="hover:text-gold">
+                  Atom Feed
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-gold mb-4">
+              StarStore
+            </div>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <a href={APP_URL} target="_blank" rel="noopener" className="hover:text-gold">
+                  Buy &amp; sell Telegram Stars
+                </a>
+              </li>
+              <li>
+                <a href={AMBASSADOR_URL} target="_blank" rel="noopener" className="hover:text-gold">
+                  Ambassador programme
+                </a>
+              </li>
+              <li>
+                <a href={BOT_URL} target="_blank" rel="noopener" className="hover:text-gold">
+                  Open the Mini App
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -34,22 +70,32 @@ export function SiteFooter() {
               Find us
             </div>
             <div className="flex flex-col gap-3 text-sm">
-              <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer"
-                 className="inline-flex items-center gap-3 hover:text-gold transition-colors">
+              <a
+                href={BOT_URL}
+                target="_blank"
+                rel="noopener"
+                className="inline-flex items-center gap-3 hover:text-gold transition-colors"
+              >
                 <span className="w-9 h-9 rounded-full border border-paper/20 flex items-center justify-center">
                   <FaTelegram className="w-4 h-4" />
                 </span>
                 @TgStarStore_bot
               </a>
-              <a href="mailto:support@starstore.app"
-                 className="inline-flex items-center gap-3 hover:text-gold transition-colors">
+              <a
+                href={`mailto:${SUPPORT_EMAIL}`}
+                className="inline-flex items-center gap-3 hover:text-gold transition-colors"
+              >
                 <span className="w-9 h-9 rounded-full border border-paper/20 flex items-center justify-center">
                   <Mail className="w-4 h-4" />
                 </span>
-                support@starstore.app
+                {SUPPORT_EMAIL}
               </a>
-              <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer"
-                 className="inline-flex items-center gap-3 hover:text-gold transition-colors">
+              <a
+                href={BOT_URL}
+                target="_blank"
+                rel="noopener"
+                className="inline-flex items-center gap-3 hover:text-gold transition-colors"
+              >
                 <span className="w-9 h-9 rounded-full border border-paper/20 flex items-center justify-center">
                   <MessageCircle className="w-4 h-4" />
                 </span>

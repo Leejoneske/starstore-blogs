@@ -8,6 +8,11 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+
+# Local env files — the app ships no secrets, keep it that way
+.env
+.env.*
+!.env.example
 dist
 dist-ssr
 .output

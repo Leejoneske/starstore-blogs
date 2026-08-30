@@ -5,12 +5,54 @@ export type Post = {
   seoTitle?: string;
   dek: string;
   category: string;
+  /** ISO 8601 (YYYY-MM-DD). Rendered for humans via `formatDate`. */
   date: string;
+  /** ISO 8601. Set only when a post is materially revised. */
+  updated?: string;
   readTime: string;
   hero?: string;
 };
 
 export const SITE_URL = "https://blog.starstore.app";
+
+// StarStore properties this blog links out to. Centralised so the footer,
+// header, article CTAs, feeds and structured data can never drift apart.
+export const APP_URL = "https://starstore.app";
+export const AMBASSADOR_URL = "https://amb.starstore.app";
+export const BOT_URL = "https://t.me/TgStarStore_bot";
+export const SUPPORT_EMAIL = "support@starstore.app";
+
+const MONTHS = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+// Hand-rolled rather than toLocaleDateString: the same string has to come out
+// of the prerender and the browser, and Intl output can differ by ICU build.
+export function formatDate(iso: string): string {
+  const [y, m, d] = iso.split("-").map(Number);
+  return `${MONTHS[m - 1]} ${d}, ${y}`;
+}
+
+/** RFC 822, for RSS <pubDate>. */
+export function toRfc822(iso: string): string {
+  return new Date(`${iso}T00:00:00Z`).toUTCString();
+}
+
+/** RFC 3339, for Atom and schema.org. */
+export function toRfc3339(iso: string): string {
+  return `${iso}T00:00:00Z`;
+}
 
 export const posts: Post[] = [
   {
@@ -20,19 +62,18 @@ export const posts: Post[] = [
     seoTitle: "StarStore Referral: Earn 30% Commission on Trades",
     dek: "The new StarStore referral program pays 30% commission on every eligible trade your referrals make, up to $50 each. Here's how to get started in @TgStarStore_bot.",
     category: "Earn Money",
-    date: "August 2, 2026",
+    date: "2026-08-02",
     readTime: "7 min read",
     hero: "/og/starstore-referral-commission.jpg",
   },
   {
-
     slug: "what-is-usdt-and-usdt-on-ton",
     number: "07",
     title: "What Is USDT and What Is USDT on TON?",
     seoTitle: "What Is USDT and What Is USDT on TON? A Complete Guide",
     dek: "What is USDT on TON? Learn how Tether's stablecoin runs on Telegram's blockchain; instant, near-zero-fee transfers paid out by StarStore.",
     category: "Crypto Guides",
-    date: "June 16, 2026",
+    date: "2026-06-16",
     readTime: "7 min read",
     hero: "/og/what-is-usdt-and-usdt-on-ton.jpg",
   },
@@ -43,11 +84,10 @@ export const posts: Post[] = [
     seoTitle: "How to Earn Money on Telegram: StarStore Referral Program",
     dek: "Earn money on Telegram with the StarStore referral program. Share your link via @TgStarStore_bot and earn 30% commission on every eligible trade your referrals make.",
     category: "Earn Money",
-    date: "June 10, 2026",
+    date: "2026-06-10",
     readTime: "6 min read",
     hero: "/og/how-to-earn-on-telegram.jpg",
   },
-
   {
     slug: "sell-telegram-stars-for-ton",
     number: "05",
@@ -55,7 +95,7 @@ export const posts: Post[] = [
     seoTitle: "Sell Telegram Stars for TON: Convert and Withdraw Guide",
     dek: "Sell Telegram Stars for TON or USDT inside @TgStarStore_bot. Step-by-step guide: minimum 50 Stars, live rates, and direct payout to your wallet.",
     category: "Selling Stars",
-    date: "June 9, 2026",
+    date: "2026-06-09",
     readTime: "6 min read",
     hero: "/og/sell-telegram-stars-for-ton.jpg",
   },
@@ -65,7 +105,7 @@ export const posts: Post[] = [
     title: "StarStore is Now Officially on starstore.app",
     dek: "StarStore officially moves to starstore.app. Same bot, same balances, same payouts; just a more secure domain. Here's what changes and what doesn't.",
     category: "Announcements",
-    date: "May 5, 2026",
+    date: "2026-05-05",
     readTime: "4 min read",
     hero: "/og/starstore-now-on-starstore-app.jpg",
   },
@@ -75,7 +115,7 @@ export const posts: Post[] = [
     title: "How to Cash Out Telegram Stars for Real Money",
     dek: "How to cash out Telegram Stars for real money: sell via @TgStarStore_bot, get paid in USDT on TON, and track your order by ID. Full walkthrough.",
     category: "Selling Stars",
-    date: "December 10, 2024",
+    date: "2024-12-10",
     readTime: "5 min read",
     hero: "/og/how-to-cash-out-telegram-stars.jpg",
   },
@@ -85,7 +125,7 @@ export const posts: Post[] = [
     title: "StarStore Knowledge Base: Buying, Selling, and Referrals",
     dek: "StarStore explained: Star packages from 15 to 1,000,000; sell limits; the 21-day hold; referral program rules; and the full refund policy.",
     category: "Knowledge Base",
-    date: "December 6, 2024",
+    date: "2024-12-06",
     readTime: "6 min read",
     hero: "/og/starstore-knowledge-base.jpg",
   },
@@ -96,7 +136,7 @@ export const posts: Post[] = [
     seoTitle: "Complete Guide to Telegram Stars: All You Need to Know",
     dek: "Telegram Stars explained: what they are, how to buy them via StarStore, how creators earn them, and how to convert Stars to USDT. Complete guide.",
     category: "Telegram Guides",
-    date: "December 4, 2024",
+    date: "2024-12-04",
     readTime: "4 min read",
     hero: "/og/telegram-stars-complete-guide.jpg",
   },

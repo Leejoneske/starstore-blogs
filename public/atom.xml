@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>StarStore Insights</title>
+  <subtitle>Guides and updates on Telegram Stars, USDT payouts on TON, referrals, and the StarStore Telegram Mini App.</subtitle>
+  <id>https://blog.starstore.app/</id>
+  <link href="https://blog.starstore.app/" />
+  <link href="https://blog.starstore.app/atom.xml" rel="self" type="application/atom+xml" />
+  <updated>2026-08-02T00:00:00Z</updated>
+  <author><name>StarStore</name><uri>https://starstore.app</uri></author>
+  <entry>
+    <title>StarStore Referral Program: Earn 30% Commission</title>
+    <id>https://blog.starstore.app/blog/starstore-referral-commission</id>
+    <link href="https://blog.starstore.app/blog/starstore-referral-commission" />
+    <published>2026-08-02T00:00:00Z</published>
+    <updated>2026-08-02T00:00:00Z</updated>
+    <category term="Earn Money" />
+    <summary>The new StarStore referral program pays 30% commission on every eligible trade your referrals make, up to $50 each. Here's how to get started in @TgStarStore_bot.</summary>
+  </entry>
+  <entry>
+    <title>What Is USDT and What Is USDT on TON?</title>
+    <id>https://blog.starstore.app/blog/what-is-usdt-and-usdt-on-ton</id>
+    <link href="https://blog.starstore.app/blog/what-is-usdt-and-usdt-on-ton" />
+    <published>2026-06-16T00:00:00Z</published>
+    <updated>2026-06-16T00:00:00Z</updated>
+    <category term="Crypto Guides" />
+    <summary>What is USDT on TON? Learn how Tether's stablecoin runs on Telegram's blockchain; instant, near-zero-fee transfers paid out by StarStore.</summary>
+  </entry>
+  <entry>
+    <title>How to Earn Real Cash on Telegram: The StarStore Referral Program</title>
+    <id>https://blog.starstore.app/blog/how-to-earn-money-on-telegram</id>
+    <link href="https://blog.starstore.app/blog/how-to-earn-money-on-telegram" />
+    <published>2026-06-10T00:00:00Z</published>
+    <updated>2026-06-10T00:00:00Z</updated>
+    <category term="Earn Money" />
+    <summary>Earn money on Telegram with the StarStore referral program. Share your link via @TgStarStore_bot and earn 30% commission on every eligible trade your referrals make.</summary>
+  </entry>
+  <entry>
+    <title>How to Sell Telegram Stars for TON: Convert and Withdraw Guide</title>
+    <id>https://blog.starstore.app/blog/sell-telegram-stars-for-ton</id>
+    <link href="https://blog.starstore.app/blog/sell-telegram-stars-for-ton" />
+    <published>2026-06-09T00:00:00Z</published>
+    <updated>2026-06-09T00:00:00Z</updated>
+    <category term="Selling Stars" />
+    <summary>Sell Telegram Stars for TON or USDT inside @TgStarStore_bot. Step-by-step guide: minimum 50 Stars, live rates, and direct payout to your wallet.</summary>
+  </entry>
+  <entry>
+    <title>StarStore is Now Officially on starstore.app</title>
+    <id>https://blog.starstore.app/blog/starstore-now-on-starstore-app</id>
+    <link href="https://blog.starstore.app/blog/starstore-now-on-starstore-app" />
+    <published>2026-05-05T00:00:00Z</published>
+    <updated>2026-05-05T00:00:00Z</updated>
+    <category term="Announcements" />
+    <summary>StarStore officially moves to starstore.app. Same bot, same balances, same payouts; just a more secure domain. Here's what changes and what doesn't.</summary>
+  </entry>
+  <entry>
+    <title>How to Cash Out Telegram Stars for Real Money</title>
+    <id>https://blog.starstore.app/blog/how-to-cash-out-telegram-stars</id>
+    <link href="https://blog.starstore.app/blog/how-to-cash-out-telegram-stars" />
+    <published>2024-12-10T00:00:00Z</published>
+    <updated>2024-12-10T00:00:00Z</updated>
+    <category term="Selling Stars" />
+    <summary>How to cash out Telegram Stars for real money: sell via @TgStarStore_bot, get paid in USDT on TON, and track your order by ID. Full walkthrough.</summary>
+  </entry>
+  <entry>
+    <title>StarStore Knowledge Base: Buying, Selling, and Referrals</title>
+    <id>https://blog.starstore.app/blog/starstore-knowledge-base</id>
+    <link href="https://blog.starstore.app/blog/starstore-knowledge-base" />
+    <published>2024-12-06T00:00:00Z</published>
+    <updated>2024-12-06T00:00:00Z</updated>
+    <category term="Knowledge Base" />
+    <summary>StarStore explained: Star packages from 15 to 1,000,000; sell limits; the 21-day hold; referral program rules; and the full refund policy.</summary>
+  </entry>
+  <entry>
+    <title>Complete Guide to Telegram Stars: Everything You Need to Know</title>
+    <id>https://blog.starstore.app/blog/telegram-stars-complete-guide</id>
+    <link href="https://blog.starstore.app/blog/telegram-stars-complete-guide" />
+    <published>2024-12-04T00:00:00Z</published>
+    <updated>2024-12-04T00:00:00Z</updated>
+    <category term="Telegram Guides" />
+    <summary>Telegram Stars explained: what they are, how to buy them via StarStore, how creators earn them, and how to convert Stars to USDT. Complete guide.</summary>
+  </entry>
+</feed>

@@ -1,7 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Copy } from "lucide-react";
 import { FaTelegram } from "react-icons/fa6";
-import { posts } from "@/lib/posts";
+import {
+  posts,
+  formatDate,
+  toRfc3339,
+  SITE_URL,
+  APP_URL,
+  AMBASSADOR_URL,
+  BOT_URL,
+} from "@/lib/posts";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { useState } from "react";
@@ -11,22 +19,53 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "StarStore Insights — Telegram Stars Guides & Updates" },
-      { name: "description", content: "Practical know-how for buying and selling Telegram Stars, growing referrals, and staying secure — from the team behind StarStore." },
+      {
+        name: "description",
+        content:
+          "Practical know-how for buying and selling Telegram Stars, growing referrals, and staying secure — from the team behind StarStore.",
+      },
       { property: "og:title", content: "StarStore Insights" },
-      { property: "og:description", content: "Editorial guides on Telegram Stars, USDT payouts, and the StarStore Mini App." },
+      {
+        property: "og:description",
+        content: "Editorial guides on Telegram Stars, USDT payouts, and the StarStore Mini App.",
+      },
       { property: "og:url", content: "https://blog.starstore.app/" },
       { property: "og:type", content: "website" },
     ],
-    links: [
-      { rel: "canonical", href: "https://blog.starstore.app/" },
-      // Preload the first (LCP) hero image so it's ready before paint.
-      ...(posts[0]?.hero
-        ? [{ rel: "preload", as: "image", href: posts[0].hero, fetchpriority: "high" } as const]
-        : []),
-      // Warm up subsequent hero images while the page is idle.
-      ...posts.slice(1).flatMap((p) =>
-        p.hero ? [{ rel: "prefetch", as: "image", href: p.hero } as const] : [],
-      ),
+    // No image <link>s here on purpose. React 19 already emits a preload for
+    // the LCP hero from its fetchPriority="high" — and its version carries
+    // imageSizes, so it preloads the same candidate the <img> resolves to. A
+    // hand-written preload without imageSizes can cost a second download.
+    // The other seven heroes are lazy and below the fold; prefetching them all
+    // pulled ~435 KB that most visitors never scroll to.
+    links: [{ rel: "canonical", href: `${SITE_URL}/` }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          "@id": `${SITE_URL}/#blog`,
+          name: "StarStore Insights",
+          url: `${SITE_URL}/`,
+          inLanguage: "en",
+          publisher: {
+            "@type": "Organization",
+            name: "StarStore",
+            url: APP_URL,
+            sameAs: [APP_URL, AMBASSADOR_URL, BOT_URL],
+          },
+          blogPost: posts.map((p) => ({
+            "@type": "BlogPosting",
+            headline: p.title,
+            url: `${SITE_URL}/blog/${p.slug}`,
+            datePublished: toRfc3339(p.date),
+            dateModified: toRfc3339(p.updated ?? p.date),
+            articleSection: p.category,
+            ...(p.hero ? { image: `${SITE_URL}${p.hero}` } : {}),
+          })),
+        }),
+      },
     ],
   }),
   component: Index,
@@ -34,7 +73,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const [copied, setCopied] = useState(false);
-  const rss = "https://blog.starstore.app/rss.xml";
+  const rss = `${SITE_URL}/rss.xml`;
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -52,39 +91,63 @@ function Index() {
             <h1 className="font-display font-semibold text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight mt-8 text-balance max-w-5xl">
               Guides & updates from the
               <span className="inline-flex items-baseline gap-3 ml-2">
-                <img src={logo} alt="brand mark" className="inline-block w-[0.9em] h-[0.9em] rounded-full translate-y-[0.1em]" />
+                <img
+                  src={logo}
+                  alt="brand mark"
+                  className="inline-block w-[0.9em] h-[0.9em] rounded-full translate-y-[0.1em]"
+                />
                 <em className="text-gold not-italic font-display">team</em>
-              </span>.
+              </span>
+              .
             </h1>
 
             <p className="mt-8 max-w-2xl text-lg md:text-xl leading-relaxed text-muted-foreground text-pretty">
-              Practical know-how for buying and selling <strong className="text-foreground">Telegram Stars</strong>,
-              growing referrals, and staying secure — written by the people who build the platform.
+              Practical know-how for buying and selling{" "}
+              <strong className="text-foreground">Telegram Stars</strong>, growing referrals, and
+              staying secure — written by the people who build the platform.
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3">
-              <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer"
-                 className="btn-press inline-flex items-center justify-center gap-2 bg-ink text-paper px-6 py-3 rounded-full font-medium hover:bg-gold hover:text-ink w-full sm:w-auto text-center">
+              <a
+                href={BOT_URL}
+                target="_blank"
+                rel="noopener"
+                className="btn-press inline-flex items-center justify-center gap-2 bg-ink text-paper px-6 py-3 rounded-full font-medium hover:bg-gold hover:text-ink w-full sm:w-auto text-center"
+              >
                 <FaTelegram className="w-4 h-4" /> Open the App
               </a>
-              <Link to="/blog/$slug" params={{ slug: posts[0].slug }}
-                 className="btn-press inline-flex items-center justify-center gap-2 border border-ink px-6 py-3 rounded-full font-medium hover:bg-ink hover:text-paper w-full sm:w-auto text-center">
+              <Link
+                to="/blog/$slug"
+                params={{ slug: posts[0].slug }}
+                className="btn-press inline-flex items-center justify-center gap-2 border border-ink px-6 py-3 rounded-full font-medium hover:bg-ink hover:text-paper w-full sm:w-auto text-center"
+              >
                 Read articles <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
 
             {/* RSS */}
             <div className="mt-12 max-w-md">
-              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-2">Subscribe via RSS</div>
+              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-2">
+                Subscribe via RSS
+              </div>
               <div className="flex flex-col sm:flex-row items-stretch gap-2 border border-rule rounded-md bg-card p-1.5">
-                <code className="flex-1 font-mono text-xs px-2 py-2 sm:py-0 truncate self-center">{rss}</code>
+                <code className="flex-1 font-mono text-xs px-2 py-2 sm:py-0 truncate self-center">
+                  {rss}
+                </code>
                 <button
-                  onClick={() => { navigator.clipboard.writeText(rss); setCopied(true); setTimeout(() => setCopied(false), 1500); }}
-                  className="px-3 py-2 sm:py-1.5 bg-ink text-paper rounded text-xs font-mono uppercase tracking-wider hover:bg-gold hover:text-ink transition-colors flex items-center justify-center gap-1.5">
+                  onClick={() => {
+                    navigator.clipboard.writeText(rss);
+                    setCopied(true);
+                    setTimeout(() => setCopied(false), 1500);
+                  }}
+                  className="px-3 py-2 sm:py-1.5 bg-ink text-paper rounded text-xs font-mono uppercase tracking-wider hover:bg-gold hover:text-ink transition-colors flex items-center justify-center gap-1.5"
+                >
                   <Copy className="w-3 h-3" /> {copied ? "Copied" : "Copy"}
                 </button>
               </div>
-              <div className="font-mono text-[10px] text-muted-foreground mt-2">Paste into your feed reader to subscribe</div>
+              <div className="font-mono text-[10px] text-muted-foreground mt-2">
+                Paste into your feed reader to subscribe
+              </div>
             </div>
           </div>
         </section>
@@ -93,15 +156,26 @@ function Index() {
         <section className="max-w-6xl mx-auto px-6 py-20">
           <div className="flex items-end justify-between mb-12 flex-wrap gap-4">
             <div>
-              <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-gold mb-2">In this issue</div>
+              <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-gold mb-2">
+                In this issue
+              </div>
               <h2 className="font-display text-4xl md:text-5xl font-semibold tracking-tight">
-                {posts.length} posts <span className="text-muted-foreground font-normal italic">·</span>
-                <span className="text-muted-foreground font-normal italic"> Updated {posts[0]?.date}</span>
+                {posts.length} posts{" "}
+                <span className="text-muted-foreground font-normal italic">·</span>
+                <span className="text-muted-foreground font-normal italic">
+                  {" "}
+                  Updated {posts[0] ? formatDate(posts[0].date) : ""}
+                </span>
               </h2>
             </div>
             <div className="flex flex-wrap gap-2 font-mono text-[10px] uppercase tracking-wider">
               {Array.from(new Set(posts.map((p) => p.category))).map((t) => (
-                <span key={t} className="px-3 py-1.5 bg-secondary rounded-full text-secondary-foreground">{t}</span>
+                <span
+                  key={t}
+                  className="px-3 py-1.5 bg-secondary rounded-full text-secondary-foreground"
+                >
+                  {t}
+                </span>
               ))}
             </div>
           </div>
@@ -129,11 +203,12 @@ function Index() {
                       {post.dek}
                     </p>
                     <div className="mt-4 font-mono text-[11px] uppercase tracking-wider text-muted-foreground flex items-center gap-3">
-                      <span>{post.date}</span>
+                      <time dateTime={post.date}>{formatDate(post.date)}</time>
                       <span>·</span>
                       <span>{post.readTime}</span>
                       <span className="inline-flex items-center gap-1 text-foreground group-hover:text-gold transition-colors ml-auto md:hidden">
-                        Read <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                        Read{" "}
+                        <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                       </span>
                     </div>
                   </div>
@@ -148,6 +223,7 @@ function Index() {
                           decoding="async"
                           width={1600}
                           height={896}
+                          sizes="(min-width: 768px) 33vw, 100vw"
                           className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
                         />
                       </figure>
@@ -179,15 +255,39 @@ function Index() {
               Stay in the loop.
             </h2>
             <p className="mt-4 text-muted-foreground max-w-md mx-auto">
-              Follow new posts via RSS, or join us on Telegram for updates.
+              Follow new posts via RSS, or open StarStore on Telegram and the web.
             </p>
 
-            <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 max-w-md mx-auto">
-              <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer"
-                 className="btn-press inline-flex items-center justify-center gap-2 bg-ink text-paper px-6 py-3 rounded-full font-medium hover:bg-gold hover:text-ink w-full sm:w-auto">
-                <FaTelegram className="w-4 h-4" /> Join us on Telegram
+            <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 max-w-xl mx-auto">
+              <a
+                href={BOT_URL}
+                target="_blank"
+                rel="noopener"
+                className="btn-press inline-flex items-center justify-center gap-2 bg-ink text-paper px-6 py-3 rounded-full font-medium hover:bg-gold hover:text-ink w-full sm:w-auto"
+              >
+                <FaTelegram className="w-4 h-4" /> Open the Mini App
+              </a>
+              <a
+                href={APP_URL}
+                target="_blank"
+                rel="noopener"
+                className="btn-press inline-flex items-center justify-center gap-2 border border-ink px-6 py-3 rounded-full font-medium hover:bg-ink hover:text-paper w-full sm:w-auto"
+              >
+                Buy &amp; sell on starstore.app
               </a>
             </div>
+            <p className="mt-4 text-sm text-muted-foreground">
+              Growing an audience?{" "}
+              <a
+                href={AMBASSADOR_URL}
+                target="_blank"
+                rel="noopener"
+                className="underline hover:text-gold"
+              >
+                Join the StarStore ambassador programme
+              </a>
+              .
+            </p>
           </div>
         </section>
       </main>

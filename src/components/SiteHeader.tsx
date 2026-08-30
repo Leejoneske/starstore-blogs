@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import logo from "@/assets/logo.png";
+import { APP_URL, AMBASSADOR_URL, BOT_URL } from "@/lib/posts";
 
 export function SiteHeader() {
   return (
@@ -16,13 +17,36 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 font-mono text-xs uppercase tracking-widest">
-          <Link to="/" activeOptions={{ exact: true }} className="hover:text-gold transition-colors" activeProps={{ className: "text-gold" }}>
+          <Link
+            to="/"
+            activeOptions={{ exact: true }}
+            className="hover:text-gold transition-colors"
+            activeProps={{ className: "text-gold" }}
+          >
             Issue
           </Link>
-          <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noreferrer" className="hover:text-gold transition-colors">
+          <a
+            href={BOT_URL}
+            target="_blank"
+            rel="noopener"
+            className="hover:text-gold transition-colors"
+          >
             Open App
           </a>
-          <a href="https://starstore.app" target="_blank" rel="noreferrer" className="hover:text-gold transition-colors">
+          <a
+            href={AMBASSADOR_URL}
+            target="_blank"
+            rel="noopener"
+            className="hover:text-gold transition-colors"
+          >
+            Ambassadors ↗
+          </a>
+          <a
+            href={APP_URL}
+            target="_blank"
+            rel="noopener"
+            className="hover:text-gold transition-colors"
+          >
             starstore.app ↗
           </a>
         </nav>
