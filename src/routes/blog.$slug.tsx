@@ -1,6 +1,14 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { ArticleLayout } from "@/components/ArticleLayout";
-import { getPost, SITE_URL, APP_URL, AMBASSADOR_URL, BOT_URL, toRfc3339 } from "@/lib/posts";
+import {
+  getPost,
+  postUrl,
+  SITE_URL,
+  APP_URL,
+  AMBASSADOR_URL,
+  BOT_URL,
+  toRfc3339,
+} from "@/lib/posts";
 import { articles } from "@/lib/articles";
 
 export const Route = createFileRoute("/blog/$slug")({
@@ -13,7 +21,7 @@ export const Route = createFileRoute("/blog/$slug")({
     const post = loaderData?.post;
     if (!post) return {};
     const ogImage = post.hero ? `${SITE_URL}${post.hero}` : undefined;
-    const url = `${SITE_URL}/blog/${post.slug}`;
+    const url = postUrl(post.slug);
 
     const articleSchema: Record<string, unknown> = {
       "@context": "https://schema.org",
@@ -38,13 +46,15 @@ export const Route = createFileRoute("/blog/$slug")({
       ...(ogImage ? { image: [ogImage] } : {}),
     };
 
+    // Every crumb needs an `item` URL, or Search Console reports the whole
+    // list as invalid ("Missing field 'item'"). Categories have no page of
+    // their own, so they are not a crumb; articleSection above carries them.
     const breadcrumbSchema = {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Insights", item: SITE_URL },
-        { "@type": "ListItem", position: 2, name: post.category },
-        { "@type": "ListItem", position: 3, name: post.title, item: url },
+        { "@type": "ListItem", position: 1, name: "Insights", item: `${SITE_URL}/` },
+        { "@type": "ListItem", position: 2, name: post.title, item: url },
       ],
     };
 

@@ -3,6 +3,7 @@ import { ArrowRight, Copy } from "lucide-react";
 import { FaTelegram } from "react-icons/fa6";
 import {
   posts,
+  postUrl,
   formatDate,
   toRfc3339,
   SITE_URL,
@@ -58,7 +59,7 @@ export const Route = createFileRoute("/")({
           blogPost: posts.map((p) => ({
             "@type": "BlogPosting",
             headline: p.title,
-            url: `${SITE_URL}/blog/${p.slug}`,
+            url: postUrl(p.slug),
             datePublished: toRfc3339(p.date),
             dateModified: toRfc3339(p.updated ?? p.date),
             articleSection: p.category,

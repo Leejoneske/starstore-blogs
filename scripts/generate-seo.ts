@@ -5,6 +5,7 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import {
   posts,
+  postUrl,
   SITE_URL,
   APP_URL,
   AMBASSADOR_URL,
@@ -21,7 +22,6 @@ const DESCRIPTION =
 const esc = (s: string) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
-const postUrl = (slug: string) => `${SITE_URL}/blog/${slug}`;
 // The freshest post date doubles as the feed/sitemap timestamp, so a rebuild
 // with no content change produces a byte-identical file (no git churn, and no
 // misleading "everything changed today" signal to crawlers).

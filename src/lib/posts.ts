@@ -15,6 +15,12 @@ export type Post = {
 
 export const SITE_URL = "https://blog.starstore.app";
 
+// A post is exported as /blog/<slug>/index.html, and GitHub Pages answers the
+// slashless form with a redirect to it. So the address with the slash is the
+// page, and it is the one every canonical, crumb and feed entry names: a
+// canonical that points at a redirect is one Google overrides by itself.
+export const postUrl = (slug: string) => `${SITE_URL}/blog/${slug}/`;
+
 // StarStore properties this blog links out to. Centralised so the footer,
 // header, article CTAs, feeds and structured data can never drift apart.
 export const APP_URL = "https://starstore.app";
