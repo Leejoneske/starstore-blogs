@@ -120,20 +120,20 @@ export const Route = createFileRoute("/blog/$slug")({
 
       "sell-telegram-stars-for-ton": [
         {
-          q: "How do I sell Telegram Stars for TON?",
-          a: "Open @TgStarStore_bot in Telegram and launch the StarStore Mini App, go to the Sell page, enter the number of Stars (50 minimum, 80,000 maximum), paste your TON-network wallet address, and confirm. After the 21-day holding window, your payout is sent on the TON network.",
+          q: "How do I sell Telegram Stars?",
+          a: "Open the Sell page in the @TgStarStore_bot Mini App or at starstore.app, enter the number of Stars (50 minimum, 80,000 maximum), paste your USDT on TON wallet address, and pay the Stars through Telegram's invoice. After the 21-day holding window, USDT is sent to your wallet.",
         },
         {
-          q: "Can I convert Telegram Stars to TON or USDT?",
-          a: "Yes. In the @TgStarStore_bot Mini App you can convert Stars to USDT on the TON network (the default and cheapest option), to native TON, or to TRC-20 USDT. Live rates are shown before you confirm.",
+          q: "What do I get paid in?",
+          a: "USDT on the TON network, which is what we recommend. USDT on TRC-20 is possible as an exception, with an additional transaction fee.",
         },
         {
           q: "Where do I sell my Telegram Stars?",
-          a: "Selling happens only inside the @TgStarStore_bot Telegram Mini App: there is no website form. Open the bot in Telegram, launch the Mini App, and use the Sell page.",
+          a: "In the @TgStarStore_bot Telegram Mini App, or at starstore.app in a browser after signing in with Telegram. Either way the Stars are paid through Telegram's own invoice.",
         },
         {
-          q: "How long does it take to withdraw Stars to my wallet?",
-          a: "Stars enter a 21-day holding window that protects against payment chargebacks. After the window clears, your TON or USDT payout is sent to the wallet address you provided.",
+          q: "How do I change my payout wallet after selling?",
+          a: "Send /wallet to @TgStarStore_bot. It lists your open sell orders; pick one, send the new address, and the bot confirms once the change has been reviewed. Do it while the order is still open.",
         },
       ],
       "how-to-cash-out-telegram-stars": [
@@ -147,11 +147,11 @@ export const Route = createFileRoute("/blog/$slug")({
         },
         {
           q: "Can I receive USDT on TRC-20 instead of TON?",
-          a: "Yes, but you'll need to cover the network transaction cost yourself, which usually eats into a small payout. The default and cheapest path is USDT on the TON network.",
+          a: "As an exception, yes, with an additional transaction fee that weighs most on a small payout. We recommend USDT on the TON network.",
         },
         {
           q: "What happens if I send the wrong wallet address?",
-          a: "Crypto transactions cannot be reversed. Always paste and verify your wallet address before confirming the order.",
+          a: "Crypto transactions cannot be reversed. Always paste and verify your wallet address before confirming. If you spot a mistake while the order is still open, send /wallet to @TgStarStore_bot to change it.",
         },
       ],
       "starstore-knowledge-base": [

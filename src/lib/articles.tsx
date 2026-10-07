@@ -311,7 +311,7 @@ const ReferralCommission = () => (
       </li>
       <li>
         Explain the benefit: your referrals can{" "}
-        <a href="/blog/sell-telegram-stars-for-ton/">sell Stars for TON</a> or{" "}
+        <a href="/blog/sell-telegram-stars-for-ton/">sell Stars for USDT on TON</a> or{" "}
         <a href="/blog/how-to-cash-out-telegram-stars/">cash out Stars for USDT</a> at good rates.
       </li>
       <li>
@@ -429,74 +429,68 @@ const EarnOnTelegram = () => (
 const SellStarsToTon = () => (
   <>
     <p>
-      Telegram Stars are easy to earn but hard to spend outside Telegram. StarStore fixes that: you
-      can sell, convert, and withdraw your Telegram Stars to TON (or USDT on the TON network) in
-      minutes, and the entire process happens inside the{" "}
+      Telegram Stars are easy to earn but hard to spend outside Telegram. StarStore buys them from
+      you and pays you in <strong>USDT on the TON network</strong>, a dollar stablecoin that lands
+      in any TON wallet. You can sell in the{" "}
       <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noopener">
         @TgStarStore_bot
       </a>{" "}
-      Telegram Mini App, not on any website.
+      Mini App, or on <a href="https://starstore.app/sell/">starstore.app</a> in a browser.
     </p>
 
-    <h2>
-      Where you sell: the{" "}
-      <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noopener">
-        @TgStarStore_bot
-      </a>{" "}
-      Mini App
-    </h2>
+    <h2>Where you sell</h2>
     <p>
-      There is no web form for selling Stars. Everything: buying, selling, converting Stars to TON,
-      referrals, and withdrawals, is handled inside Telegram through{" "}
+      Inside Telegram, open{" "}
       <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noopener">
         @TgStarStore_bot
       </a>
-      . Open the bot in Telegram, tap <strong>Start</strong>, and launch the StarStore Mini App.
-      This keeps your account, balances, and payouts tied to your Telegram identity and protected by
-      Telegram's own security.
+      , tap <strong>Start</strong>, and launch the StarStore Mini App. In a browser, go to{" "}
+      <a href="https://starstore.app/sell/">starstore.app/sell</a> and sign in with Telegram when
+      asked. Either way, the Stars themselves are paid through Telegram's own invoice, so your
+      account and your Stars never leave Telegram's hands until you confirm.
     </p>
 
-    <h2>How to sell Telegram Stars for TON: step by step</h2>
+    <h2>How to sell Telegram Stars: step by step</h2>
     <ol>
       <li>
-        Open{" "}
-        <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noopener">
-          @TgStarStore_bot
-        </a>{" "}
-        in Telegram and launch the Mini App.
+        Open the <strong>Sell</strong> page in the Mini App or at starstore.app.
       </li>
       <li>
-        Go to the <strong>Sell</strong> page.
+        Enter the number of Stars you want to sell (<strong>50 minimum, 80,000 maximum</strong> per
+        order). The USDT you will receive is shown as you type.
       </li>
       <li>
-        Enter the number of Stars you want to convert (<strong>50 minimum, 80,000 maximum</strong>{" "}
-        per transaction).
+        Paste your <strong>USDT on TON wallet address</strong>. A memo is optional: add one only if
+        your exchange asks for it.
       </li>
       <li>
-        Choose your payout: <strong>USDT on the TON network</strong> (default and cheapest); TRC-20
-        is also supported if you prefer.
+        Tap <strong>Continue</strong> and pay the Stars through Telegram's invoice. You get an order
+        ID straight away.
       </li>
       <li>
-        Paste your <strong>TON-network wallet address</strong>. No memo or tag is required.
-      </li>
-      <li>
-        Review the live rate shown in the Mini App, then confirm. You'll get an order ID instantly.
-      </li>
-      <li>
-        Your Stars enter a <strong>21-day holding window</strong>. After it clears, your payout is
+        Your sale enters a <strong>21-day holding window</strong>. After it clears, your USDT is
         sent to your wallet.
       </li>
-      <li>Send your order ID to the bot at any time to check the current status.</li>
+      <li>Send your order ID to the bot at any time to check its status.</li>
     </ol>
 
-    <h2>Converting Stars to TON vs. USDT</h2>
+    <h2>USDT on TON, and the TRC-20 exception</h2>
     <p>
-      "Selling," "converting," "cashing out," and "withdrawing" Stars all describe the same flow in
-      StarStore: you hand over Stars and receive crypto on the TON network. Most users settle in{" "}
-      <strong>USDT on TON</strong> because it provides a stable value and is the cheapest path. If
-      you specifically want native <strong>TON</strong> or TRC-20 USDT, you can request it; just
-      note that off-TON networks may carry a transaction cost you cover yourself, which eats into
-      small payouts.
+      We pay in <strong>USDT on TON</strong>, and that is what we recommend: it is fast, cheap, and
+      works with Telegram's own wallet and every major TON wallet. If you can only receive USDT on
+      TRC-20 (the Tron network), we can pay there as an exception, but an additional transaction fee
+      applies, which matters most on small payouts.
+    </p>
+
+    <h2>Changing your payout address after you sell</h2>
+    <p>
+      Pasted the wrong address, or changed wallets during the hold? Send <strong>/wallet</strong> to{" "}
+      <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noopener">
+        @TgStarStore_bot
+      </a>
+      . It lists your open sell orders; pick the one to change, send the new address, and add a memo
+      or skip it. The change is reviewed and the bot confirms once your order carries the new
+      address. Do it before the hold ends, while the order is still open.
     </p>
 
     <h2>Why is there a 21-day holding window?</h2>
@@ -510,26 +504,23 @@ const SellStarsToTon = () => (
     <h2>Limits and requirements at a glance</h2>
     <ul>
       <li>
-        <strong>Minimum sale:</strong> 50 Stars per transaction.
+        <strong>Minimum sale:</strong> 50 Stars per order.
       </li>
       <li>
-        <strong>Maximum sale:</strong> 80,000 Stars per transaction.
+        <strong>Maximum sale:</strong> 80,000 Stars per order.
       </li>
       <li>
-        <strong>Payout networks:</strong> USDT on TON (default); TON; or TRC-20 USDT.
+        <strong>Payout:</strong> USDT on TON (recommended); USDT on TRC-20 as an exception, with an
+        additional transaction fee.
       </li>
       <li>
-        <strong>Wallet:</strong> a valid TON-network address (no memo or tag needed).
+        <strong>Memo:</strong> optional, only if your exchange asks for one.
       </li>
       <li>
         <strong>Holding period:</strong> 21 days before settlement.
       </li>
       <li>
-        <strong>Where:</strong> exclusively inside{" "}
-        <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noopener">
-          @TgStarStore_bot
-        </a>
-        .
+        <strong>Changing the address:</strong> /wallet in the bot, while the order is open.
       </li>
     </ul>
 
@@ -537,28 +528,29 @@ const SellStarsToTon = () => (
     <ul>
       <li>
         <strong>Wrong wallet address:</strong> crypto transfers can't be reversed; always paste and
-        verify before confirming.
+        verify before confirming, and use /wallet if you spot a mistake while the order is open.
       </li>
       <li>
-        <strong>Wrong network:</strong> a TON wallet address is for the TON network; don't paste an
+        <strong>Wrong network:</strong> a USDT on TON address is for the TON network; don't paste an
         Ethereum or BSC address.
       </li>
       <li>
-        <strong>Off-bot deals:</strong> only transactions through{" "}
+        <strong>Off-bot deals:</strong> only orders placed through{" "}
         <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noopener">
           @TgStarStore_bot
         </a>{" "}
-        are tracked and protected.
+        or starstore.app are tracked and protected.
       </li>
     </ul>
 
     <p>
-      Ready to convert your Stars? Open{" "}
+      Ready to sell your Stars? Open{" "}
       <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noopener">
         @TgStarStore_bot
-      </a>
-      , launch the Mini App, and head to the Sell page. For limits, the referral program, and refund
-      policy, see the <a href="/blog/starstore-knowledge-base/">StarStore Knowledge Base</a>.
+      </a>{" "}
+      or <a href="https://starstore.app/sell/">starstore.app/sell</a>. For limits, the referral
+      program, and refund policy, see the{" "}
+      <a href="/blog/starstore-knowledge-base/">StarStore Knowledge Base</a>.
     </p>
   </>
 );
