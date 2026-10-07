@@ -55,8 +55,8 @@ const UsdtAndUsdtOnTon = () => (
       </li>
       <li>
         <strong>StarStore payouts:</strong> when you{" "}
-        <a href="/blog/how-to-cash-out-telegram-stars">sell Telegram Stars</a> or earn through the{" "}
-        <a href="/blog/how-to-earn-money-on-telegram">StarStore referral program</a>, you are paid
+        <a href="/blog/how-to-cash-out-telegram-stars/">sell Telegram Stars</a> or earn through the{" "}
+        <a href="/blog/how-to-earn-money-on-telegram/">StarStore referral program</a>, you are paid
         in USDT: real digital dollars you can spend, trade, or convert to local currency.
       </li>
     </ul>
@@ -206,7 +206,7 @@ const UsdtAndUsdtOnTon = () => (
       , launch the StarStore Mini App, and start selling Stars or earning through the referral
       program. Your payouts land in USDT on TON: the fastest, cheapest, and most Telegram-native way
       to hold digital dollars. For full limits and policies, see the{" "}
-      <a href="/blog/starstore-knowledge-base">StarStore Knowledge Base</a>.
+      <a href="/blog/starstore-knowledge-base/">StarStore Knowledge Base</a>.
     </p>
   </>
 );
@@ -215,9 +215,9 @@ const ReferralCommission = () => (
   <>
     <p>
       The StarStore referral program has changed. Instead of a small one-off bonus per signup, you
-      now earn <strong>30% commission on every eligible trade</strong> the people you refer make: up
-      to <strong>$50 per referral</strong>. Your success is rewarded for as long as your referrals
-      keep trading, and everything is tracked inside{" "}
+      now earn <strong>30% of our margin on every eligible trade</strong> the people you refer make:
+      up to <strong>$50 per referral</strong>. Your success is rewarded for as long as your
+      referrals keep trading, and everything is tracked inside{" "}
       <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noopener">
         @TgStarStore_bot
       </a>
@@ -227,8 +227,9 @@ const ReferralCommission = () => (
     <h2>How the 30% commission works</h2>
     <ul>
       <li>
-        <strong>30% commission</strong> on every eligible trade your referral makes: buys and sells
-        both count.
+        <strong>30% commission</strong>: 30% of our margin on every eligible trade your referral
+        makes, buys and sells both. Our margin is what we keep on an order after paying for the
+        Stars, so your share is 30% of that, not 30% of the order.
       </li>
       <li>
         <strong>Up to $50 per referral.</strong> Once one referral has earned you $50 in commission,
@@ -310,8 +311,8 @@ const ReferralCommission = () => (
       </li>
       <li>
         Explain the benefit: your referrals can{" "}
-        <a href="/blog/sell-telegram-stars-for-ton">sell Stars for TON</a> or{" "}
-        <a href="/blog/how-to-cash-out-telegram-stars">cash out Stars for USDT</a> at good rates.
+        <a href="/blog/sell-telegram-stars-for-ton/">sell Stars for TON</a> or{" "}
+        <a href="/blog/how-to-cash-out-telegram-stars/">cash out Stars for USDT</a> at good rates.
       </li>
       <li>
         Because commission scales with trade volume, active traders are worth far more than one-time
@@ -341,7 +342,7 @@ const ReferralCommission = () => (
         ambassador programme
       </a>{" "}
       at amb.starstore.app. For full limits and policies, see the{" "}
-      <a href="/blog/starstore-knowledge-base">StarStore Knowledge Base</a>.
+      <a href="/blog/starstore-knowledge-base/">StarStore Knowledge Base</a>.
     </p>
   </>
 );
@@ -360,10 +361,10 @@ const EarnOnTelegram = () => (
 
     <h2>What you earn</h2>
     <p>
-      You earn <strong>30% commission</strong> on every eligible trade made by someone who joined
+      You earn <strong>30% of our margin</strong> on every eligible trade made by someone who joined
       through your link, <strong>up to $50 per referral</strong>. It's paid in USDT and withdrawn to
       your own TON wallet: not points, not coupons. Full mechanics are in the{" "}
-      <a href="/blog/starstore-referral-commission">30% commission referral guide</a>.
+      <a href="/blog/starstore-referral-commission/">30% commission referral guide</a>.
     </p>
 
     <h2>How to start earning: step by step</h2>
@@ -386,7 +387,7 @@ const EarnOnTelegram = () => (
         </a>{" "}
         pays more than the standard referral tier.
       </li>
-      <li>Every eligible trade they make credits you 30% commission.</li>
+      <li>Every eligible trade they make credits you 30% of our margin on it.</li>
       <li>
         Withdraw to your TON wallet from a <strong>0.50 USDT</strong> minimum.
       </li>
@@ -420,7 +421,7 @@ const EarnOnTelegram = () => (
         @TgStarStore_bot
       </a>
       , launch the Mini App, and grab your referral link. For full limits and policies, see the{" "}
-      <a href="/blog/starstore-knowledge-base">StarStore Knowledge Base</a>.
+      <a href="/blog/starstore-knowledge-base/">StarStore Knowledge Base</a>.
     </p>
   </>
 );
@@ -557,7 +558,7 @@ const SellStarsToTon = () => (
         @TgStarStore_bot
       </a>
       , launch the Mini App, and head to the Sell page. For limits, the referral program, and refund
-      policy, see the <a href="/blog/starstore-knowledge-base">StarStore Knowledge Base</a>.
+      policy, see the <a href="/blog/starstore-knowledge-base/">StarStore Knowledge Base</a>.
     </p>
   </>
 );
@@ -689,7 +690,7 @@ const CashOut = () => (
 
     <p>
       For limits, holding rules, and referral and refund policy details, see the{" "}
-      <a href="/blog/starstore-knowledge-base">StarStore Knowledge Base</a>.
+      <a href="/blog/starstore-knowledge-base/">StarStore Knowledge Base</a>.
     </p>
   </>
 );
@@ -760,7 +761,7 @@ const KnowledgeBase = () => (
       in real time.
     </p>
     <p>
-      You earn <strong>30% commission</strong> on every eligible trade your referrals make, up to{" "}
+      You earn <strong>30% of our margin</strong> on every eligible trade your referrals make, up to{" "}
       <strong>$50 per referral</strong>. Commission stops accruing for a referral once it has earned
       you $50.
     </p>
@@ -781,7 +782,7 @@ const KnowledgeBase = () => (
     </ul>
     <p>
       Full walkthrough:{" "}
-      <a href="/blog/starstore-referral-commission">
+      <a href="/blog/starstore-referral-commission/">
         StarStore Referral Program: Earn 30% Commission
       </a>
       .
@@ -843,7 +844,7 @@ const StarsGuide = () => (
         <a href="https://t.me/TgStarStore_bot" target="_blank" rel="noopener">
           @TgStarStore_bot
         </a>{" "}
-        Mini App (see the <a href="/blog/how-to-cash-out-telegram-stars">cash-out walkthrough</a>).
+        Mini App (see the <a href="/blog/how-to-cash-out-telegram-stars/">cash-out walkthrough</a>).
       </li>
     </ul>
 
@@ -852,7 +853,7 @@ const StarsGuide = () => (
       <li>Competitive, transparent pricing.</li>
       <li>Instant delivery on buys.</li>
       <li>Secure TON-network settlement on sells.</li>
-      <li>A referral program paying 30% commission in real USDT.</li>
+      <li>A referral program paying 30% of our margin in real USDT.</li>
     </ul>
   </>
 );

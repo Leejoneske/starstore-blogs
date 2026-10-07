@@ -32,6 +32,15 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:url", content: "https://blog.starstore.app/" },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "StarStore Insights" },
+      // Every article had a card and the front page had none, so a shared
+      // link to the blog itself was a bare line of text. StarStore's own
+      // card, from the store, which is the brand rather than any one post.
+      { property: "og:image", content: `${APP_URL}/img/og-card.png` },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "StarStore" },
+      { name: "twitter:image", content: `${APP_URL}/img/og-card.png` },
     ],
     // No image <link>s here on purpose. React 19 already emits a preload for
     // the LCP hero from its fetchPriority="high" — and its version carries
@@ -118,7 +127,7 @@ function Index() {
                 <FaTelegram className="w-4 h-4" /> Open the App
               </a>
               <Link
-                to="/blog/$slug"
+                to="/blog/$slug/"
                 params={{ slug: posts[0].slug }}
                 className="btn-press inline-flex items-center justify-center gap-2 border border-ink px-6 py-3 rounded-full font-medium hover:bg-ink hover:text-paper w-full sm:w-auto text-center"
               >
@@ -185,7 +194,7 @@ function Index() {
             {posts.map((post, i) => (
               <Link
                 key={post.slug}
-                to="/blog/$slug"
+                to="/blog/$slug/"
                 params={{ slug: post.slug }}
                 className="group block border-b border-rule py-10 hover:bg-card/60 -mx-6 px-6 transition-colors"
               >

@@ -80,7 +80,7 @@ export const Route = createFileRoute("/blog/$slug")({
       "starstore-referral-commission": [
         {
           q: "How does the new StarStore referral program work?",
-          a: "You earn 30% commission on every eligible trade made by users who join StarStore through your referral link, up to $50 per referral. Get your code from the Refer & Earn page in the @TgStarStore_bot Mini App.",
+          a: "You earn 30% of our margin on every eligible trade made by users who join StarStore through your referral link, up to $50 per referral. Get your code from the Refer & Earn page in the @TgStarStore_bot Mini App.",
         },
         {
           q: "How much can I earn per referral?",
@@ -102,11 +102,11 @@ export const Route = createFileRoute("/blog/$slug")({
       "how-to-earn-money-on-telegram": [
         {
           q: "How can I earn real cash on Telegram?",
-          a: "Join the StarStore referral program inside @TgStarStore_bot. Copy your link from the Refer & Earn page, share it, and earn 30% commission on every eligible trade your referrals make, up to $50 per referral, paid in USDT to your TON wallet.",
+          a: "Join the StarStore referral program inside @TgStarStore_bot. Copy your link from the Refer & Earn page, share it, and earn 30% of our margin on every eligible trade your referrals make, up to $50 per referral, paid in USDT to your TON wallet.",
         },
         {
           q: "How much does the StarStore referral program pay?",
-          a: "30% commission on every eligible trade made by a referred user, capped at $50 per referral. Buy-order commission clears quickly; sell-order commission clears after 21 days.",
+          a: "30% of our margin on every eligible trade made by a referred user, capped at $50 per referral. Buy-order commission clears quickly; sell-order commission clears after 21 days.",
         },
         {
           q: "Is the StarStore referral program a real Telegram side hustle?",
@@ -161,7 +161,7 @@ export const Route = createFileRoute("/blog/$slug")({
         },
         {
           q: "How does the StarStore referral program work?",
-          a: "You earn 30% commission on every eligible trade made by users who join through your referral link, up to $50 per referral. Sell-order commission clears after 21 days; reversed orders cancel their commission.",
+          a: "You earn 30% of our margin on every eligible trade made by users who join through your referral link, up to $50 per referral. Sell-order commission clears after 21 days; reversed orders cancel their commission.",
         },
         {
           q: "What is the minimum referral withdrawal?",
@@ -213,9 +213,12 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "article:modified_time", content: toRfc3339(post.updated ?? post.date) },
         ...(ogImage
           ? [
+              // No og:image:width or height. Every post declared 1600x896
+              // and one of the eight heroes is that size: the others are
+              // 1376x768, 1600x900 and 1024x683, and a preview drawn to a
+              // declared size it does not have is cropped or stretched.
+              // Without them the card is measured from the image itself.
               { property: "og:image", content: ogImage },
-              { property: "og:image:width", content: "1600" },
-              { property: "og:image:height", content: "896" },
               { property: "og:image:alt", content: post.title },
               { name: "twitter:card", content: "summary_large_image" },
               { name: "twitter:title", content: post.title },

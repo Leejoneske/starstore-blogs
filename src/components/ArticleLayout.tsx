@@ -75,7 +75,7 @@ export function ArticleLayout({ post, children }: { post: Post; children: React.
         <div className="max-w-3xl mx-auto px-6 pb-16">
           <div className="double-rule pt-8 grid grid-cols-2 gap-6">
             {prev ? (
-              <Link to="/blog/$slug" params={{ slug: prev.slug }} className="group">
+              <Link to="/blog/$slug/" params={{ slug: prev.slug }} className="group">
                 <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-2">
                   ← Previous
                 </div>
@@ -87,7 +87,7 @@ export function ArticleLayout({ post, children }: { post: Post; children: React.
               <div />
             )}
             {next ? (
-              <Link to="/blog/$slug" params={{ slug: next.slug }} className="group text-right">
+              <Link to="/blog/$slug/" params={{ slug: next.slug }} className="group text-right">
                 <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-2">
                   Next →
                 </div>
